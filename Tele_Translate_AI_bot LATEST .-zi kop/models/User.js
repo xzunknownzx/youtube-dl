@@ -7,10 +7,9 @@ const userSchema = new mongoose.Schema({
   connectionCode: { type: String, default: null },
   connectionCodeExpiry: { type: Date, default: null },
   telegramName: { type: String, required: true, default: 'Unknown' },
-  dialect: { type: String, default: 'default' },
-  location: { type: String, default: 'unknown' }
+  dialect: { type: String, default: null }, // Changed 'default' to null
+  location: { type: String, default: null } // Changed 'unknown' to null
 });
-
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;

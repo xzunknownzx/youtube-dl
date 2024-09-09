@@ -5734,3 +5734,308 @@ All your perfect imperfections from chatId: 6498304586
 04:46:09 [32minfo[39m=Message saved successfully
 05:09:36 [31merror[39m=Polling error: EFATAL: Error: read ECONNRESET EFATAL: Error: read ECONNRESET {"code":"EFATAL","stack":"RequestError: Error: read ECONNRESET\n    at new RequestError (C:\\Users\\12166\\node_modules\\request-promise-core\\lib\\errors.js:14:15)\n    at plumbing.callback (C:\\Users\\12166\\node_modules\\request-promise-core\\lib\\plumbing.js:87:29)\n    at Request.RP$callback [as _callback] (C:\\Users\\12166\\node_modules\\request-promise-core\\lib\\plumbing.js:46:31)\n    at self.callback (C:\\Users\\12166\\node_modules\\@cypress\\request\\request.js:183:22)\n    at Request.emit (node:events:519:28)\n    at Request.onRequestError (C:\\Users\\12166\\node_modules\\@cypress\\request\\request.js:869:8)\n    at ClientRequest.emit (node:events:519:28)\n    at TLSSocket.socketErrorListener (node:_http_client:500:9)\n    at TLSSocket.emit (node:events:519:28)\n    at emitErrorNT (node:internal/streams/destroy:169:8)\n    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)"}
 05:09:47 [31merror[39m=Polling error: EFATAL: Error: getaddrinfo ENOTFOUND api.telegram.org EFATAL: Error: getaddrinfo ENOTFOUND api.telegram.org {"code":"EFATAL","stack":"RequestError: Error: getaddrinfo ENOTFOUND api.telegram.org\n    at new RequestError (C:\\Users\\12166\\node_modules\\request-promise-core\\lib\\errors.js:14:15)\n    at plumbing.callback (C:\\Users\\12166\\node_modules\\request-promise-core\\lib\\plumbing.js:87:29)\n    at Request.RP$callback [as _callback] (C:\\Users\\12166\\node_modules\\request-promise-core\\lib\\plumbing.js:46:31)\n    at self.callback (C:\\Users\\12166\\node_modules\\@cypress\\request\\request.js:183:22)\n    at Request.emit (node:events:519:28)\n    at Request.onRequestError (C:\\Users\\12166\\node_modules\\@cypress\\request\\request.js:869:8)\n    at ClientRequest.emit (node:events:519:28)\n    at TLSSocket.socketErrorListener (node:_http_client:500:9)\n    at TLSSocket.emit (node:events:519:28)\n    at emitErrorNT (node:internal/streams/destroy:169:8)\n    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\n    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)"}
+14:28:35 [32minfo[39m=Message received: /start from userId: 7156040829
+14:28:36 [32minfo[39m=Received /start command from chatId: 7156040829 {"message_id":25750,"from":{"id":7156040829,"is_bot":false,"first_name":"ماهان","username":"Ma_CR77","language_code":"fa"},"chat":{"id":7156040829,"first_name":"ماهان","username":"Ma_CR77","type":"private"},"date":1725822121,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 7156040829:
+14:28:36 [32minfo[39m=Message received: /start from userId: 7156040829
+14:28:36 [32minfo[39m=Received /start command from chatId: 7156040829 {"message_id":25751,"from":{"id":7156040829,"is_bot":false,"first_name":"ماهان","username":"Ma_CR77","language_code":"fa"},"chat":{"id":7156040829,"first_name":"ماهان","username":"Ma_CR77","type":"private"},"date":1725822125,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 7156040829:
+14:28:36 [32minfo[39m=Message received: /kill from userId: 7156040829
+14:28:36 [32minfo[39m=Received /kill command {"message_id":25752,"from":{"id":7156040829,"is_bot":false,"first_name":"ماهان","username":"Ma_CR77","language_code":"fa"},"chat":{"id":7156040829,"first_name":"ماهان","username":"Ma_CR77","type":"private"},"date":1725822127,"text":"/kill","entities":[{"offset":0,"length":5,"type":"bot_command"}]}
+14:28:36 [32minfo[39m=Message received: /clear_all from userId: 7156040829
+14:28:36 [32minfo[39m=Message received: /start from userId: 6178923558
+14:28:36 [32minfo[39m=Received /start command from chatId: 6178923558 {"message_id":25754,"from":{"id":6178923558,"is_bot":false,"first_name":"Marwa","last_name":"Barak","username":"marwabarak99","language_code":"en"},"chat":{"id":6178923558,"first_name":"Marwa","last_name":"Barak","username":"marwabarak99","type":"private"},"date":1725824574,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6178923558:
+14:28:36 [32minfo[39m=Message received: /start from userId: 6739320691
+14:28:36 [32minfo[39m=Received /start command from chatId: 6739320691 {"message_id":25755,"from":{"id":6739320691,"is_bot":false,"first_name":"Sanay","last_name":"Yusefi","language_code":"tr"},"chat":{"id":6739320691,"first_name":"Sanay","last_name":"Yusefi","type":"private"},"date":1725825016,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6739320691:
+14:28:36 [32minfo[39m=Message received: /start from userId: 7202325072
+14:28:36 [32minfo[39m=Received /start command from chatId: 7202325072 {"message_id":25756,"from":{"id":7202325072,"is_bot":false,"first_name":"H.A.n.a.n","username":"Mester_hanan","language_code":"fa"},"chat":{"id":7202325072,"first_name":"H.A.n.a.n","username":"Mester_hanan","type":"private"},"date":1725828392,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 7202325072:
+14:28:36 [32minfo[39m=Message received: /start from userId: 984295613
+14:28:36 [32minfo[39m=Received /start command from chatId: 984295613 {"message_id":25757,"from":{"id":984295613,"is_bot":false,"first_name":"حاجی حسین","username":"zhvcdr","language_code":"fa"},"chat":{"id":984295613,"first_name":"حاجی حسین","username":"zhvcdr","type":"private"},"date":1725830376,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 984295613:
+14:28:36 [32minfo[39m=Message received: انشا درمورد طبیعت from userId: 984295613
+14:28:36 [32minfo[39m=Message received: Asdf from userId: 984295613
+14:28:36 [32minfo[39m=Message received: /start from userId: 7123457040
+14:28:36 [32minfo[39m=Received /start command from chatId: 7123457040 {"message_id":25760,"from":{"id":7123457040,"is_bot":false,"first_name":"ستاره نوریان","language_code":"fa"},"chat":{"id":7123457040,"first_name":"ستاره نوریان","type":"private"},"date":1725831652,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 7123457040:
+14:28:36 [32minfo[39m=Message received: Hi from userId: 7123457040
+14:28:36 [32minfo[39m=Message received: سلام from userId: 7123457040
+14:28:36 [32minfo[39m=Message received: /start from userId: 7188996444
+14:28:36 [32minfo[39m=Received /start command from chatId: 7188996444 {"message_id":25763,"from":{"id":7188996444,"is_bot":false,"first_name":"Hasti","language_code":"fa"},"chat":{"id":7188996444,"first_name":"Hasti","type":"private"},"date":1725832945,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 7188996444:
+14:28:36 [32minfo[39m=Message received: /start from userId: 7060493110
+14:28:36 [32minfo[39m=Received /start command from chatId: 7060493110 {"message_id":25764,"from":{"id":7060493110,"is_bot":false,"first_name":"m","language_code":"fa"},"chat":{"id":7060493110,"first_name":"m","type":"private"},"date":1725841257,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 7060493110:
+14:28:36 [32minfo[39m=Message received: maryam from userId: 7060493110
+14:28:36 [32minfo[39m=Message received: مریم from userId: 7060493110
+14:28:36 [32minfo[39m=Message received: /start from userId: 7269096540
+14:28:36 [32minfo[39m=Received /start command from chatId: 7269096540 {"message_id":25767,"from":{"id":7269096540,"is_bot":false,"first_name":"N","username":"Shadow_473","language_code":"fa"},"chat":{"id":7269096540,"first_name":"N","username":"Shadow_473","type":"private"},"date":1725841496,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 7269096540:
+14:28:36 [32minfo[39m=Message received: /clear_all from userId: 7269096540
+14:28:36 [32minfo[39m=Message received: /kill from userId: 7269096540
+14:28:36 [32minfo[39m=Received /kill command {"message_id":25769,"from":{"id":7269096540,"is_bot":false,"first_name":"N","username":"Shadow_473","language_code":"fa"},"chat":{"id":7269096540,"first_name":"N","username":"Shadow_473","type":"private"},"date":1725841541,"text":"/kill","entities":[{"offset":0,"length":5,"type":"bot_command"}]}
+14:28:36 [32minfo[39m=Message received: /start from userId: 5518804541
+14:28:36 [32minfo[39m=Received /start command from chatId: 5518804541 {"message_id":25770,"from":{"id":5518804541,"is_bot":false,"first_name":"حسن🖤","username":"hsn_rza3883","language_code":"en"},"chat":{"id":5518804541,"first_name":"حسن🖤","username":"hsn_rza3883","type":"private"},"date":1725850827,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 5518804541:
+14:28:36 [32minfo[39m=Message received: /start from userId: 7450994979
+14:28:36 [32minfo[39m=Received /start command from chatId: 7450994979 {"message_id":25771,"from":{"id":7450994979,"is_bot":false,"first_name":"𝖆𝖗𝖊𝖟𝖔𝖔!🦋","username":"arezoo_turk_1389","language_code":"fa"},"chat":{"id":7450994979,"first_name":"𝖆𝖗𝖊𝖟𝖔𝖔!🦋","username":"arezoo_turk_1389","type":"private"},"date":1725862200,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 7450994979:
+14:28:36 [32minfo[39m=Message received: Experience a world-class, all-inclusive AI translator by @JohnW1kk that captures the essence of meaning, not just words. from userId: 7450994979
+14:28:36 [32minfo[39m=Message received: /start from userId: 1760773180
+14:28:36 [32minfo[39m=Received /start command from chatId: 1760773180 {"message_id":25773,"from":{"id":1760773180,"is_bot":false,"first_name":"Samyar","username":"Saami_t","language_code":"en"},"chat":{"id":1760773180,"first_name":"Samyar","username":"Saami_t","type":"private"},"date":1725869262,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 1760773180:
+14:28:36 [32minfo[39m=Message received: /start from userId: 6532225009
+14:28:36 [32minfo[39m=Received /start command from chatId: 6532225009 {"message_id":25774,"from":{"id":6532225009,"is_bot":false,"first_name":"٫","language_code":"fa"},"chat":{"id":6532225009,"first_name":"٫","type":"private"},"date":1725869887,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6532225009:
+14:28:36 [32minfo[39m=Message received:  from userId: 6532225009
+14:28:36 [32minfo[39m=Message received: /start from userId: 5521501541
+14:28:36 [32minfo[39m=Received /start command from chatId: 5521501541 {"message_id":25776,"from":{"id":5521501541,"is_bot":false,"first_name":"F","username":"Fatemeh_A2024","language_code":"fa"},"chat":{"id":5521501541,"first_name":"F","username":"Fatemeh_A2024","type":"private"},"date":1725871395,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 5521501541:
+14:28:36 [32minfo[39m=Message received: /start from userId: 5521501541
+14:28:36 [32minfo[39m=Received /start command from chatId: 5521501541 {"message_id":25777,"from":{"id":5521501541,"is_bot":false,"first_name":"F","username":"Fatemeh_A2024","language_code":"fa"},"chat":{"id":5521501541,"first_name":"F","username":"Fatemeh_A2024","type":"private"},"date":1725871406,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 5521501541:
+14:28:36 [32minfo[39m=Message received: /start from userId: 6643721082
+14:28:36 [32minfo[39m=Received /start command from chatId: 6643721082 {"message_id":25778,"from":{"id":6643721082,"is_bot":false,"first_name":"آیدا","username":"aida5191","language_code":"fa"},"chat":{"id":6643721082,"first_name":"آیدا","username":"aida5191","type":"private"},"date":1725873123,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6643721082:
+14:28:36 [32minfo[39m=Message received: /start from userId: 7002064290
+14:28:36 [32minfo[39m=Received /start command from chatId: 7002064290 {"message_id":25779,"from":{"id":7002064290,"is_bot":false,"first_name":"Sama","language_code":"en"},"chat":{"id":7002064290,"first_name":"Sama","type":"private"},"date":1725873321,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 7002064290:
+14:28:36 [32minfo[39m=Message received: Hello from userId: 7002064290
+14:28:36 [32minfo[39m=Message received: /start from userId: 6462157394
+14:28:36 [32minfo[39m=Received /start command from chatId: 6462157394 {"message_id":25781,"from":{"id":6462157394,"is_bot":false,"first_name":"praise","language_code":"fa"},"chat":{"id":6462157394,"first_name":"praise","type":"private"},"date":1725875640,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6462157394:
+14:28:36 [32minfo[39m=Message received: /start from userId: 5238042364
+14:28:36 [32minfo[39m=Received /start command from chatId: 5238042364 {"message_id":25782,"from":{"id":5238042364,"is_bot":false,"first_name":"═हई╬Ŕ♡ýԹ╬ईह═─","language_code":"fa"},"chat":{"id":5238042364,"first_name":"═हई╬Ŕ♡ýԹ╬ईह═─","type":"private"},"date":1725876050,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 5238042364:
+14:28:36 [32minfo[39m=Message received:  from userId: 5238042364
+14:28:36 [32minfo[39m=Message received: /start from userId: 188038348
+14:28:36 [32minfo[39m=Received /start command from chatId: 188038348 {"message_id":25784,"from":{"id":188038348,"is_bot":false,"first_name":"منصوره","language_code":"fa"},"chat":{"id":188038348,"first_name":"منصوره","type":"private"},"date":1725877325,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 188038348:
+14:28:36 [32minfo[39m=Message received: The best things come from living outside of your comfort zone from userId: 188038348
+14:28:36 [32minfo[39m=Message received: /start from userId: 7230578201
+14:28:36 [32minfo[39m=Received /start command from chatId: 7230578201 {"message_id":25786,"from":{"id":7230578201,"is_bot":false,"first_name":"Ayda","language_code":"fa"},"chat":{"id":7230578201,"first_name":"Ayda","type":"private"},"date":1725878234,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 7230578201:
+14:28:36 [32minfo[39m=Message received: /start from userId: 7230578201
+14:28:36 [32minfo[39m=Received /start command from chatId: 7230578201 {"message_id":25787,"from":{"id":7230578201,"is_bot":false,"first_name":"Ayda","language_code":"fa"},"chat":{"id":7230578201,"first_name":"Ayda","type":"private"},"date":1725878242,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 7230578201:
+14:28:36 [32minfo[39m=Message received: /clear_all from userId: 7230578201
+14:28:36 [32minfo[39m=Message received: /start from userId: 6325796173
+14:28:36 [32minfo[39m=Received /start command from chatId: 6325796173 {"message_id":25789,"from":{"id":6325796173,"is_bot":false,"first_name":"مهتاب","last_name":"محمدنیا","language_code":"fa"},"chat":{"id":6325796173,"first_name":"مهتاب","last_name":"محمدنیا","type":"private"},"date":1725880129,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6325796173:
+14:28:36 [32minfo[39m=Message received: /start from userId: 7047875219
+14:28:36 [32minfo[39m=Received /start command from chatId: 7047875219 {"message_id":25790,"from":{"id":7047875219,"is_bot":false,"first_name":"arezoo","username":"yees_0_0","language_code":"fa"},"chat":{"id":7047875219,"first_name":"arezoo","username":"yees_0_0","type":"private"},"date":1725881683,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 7047875219:
+14:28:36 [32minfo[39m=Message received: /start from userId: 6599260349
+14:28:36 [32minfo[39m=Received /start command from chatId: 6599260349 {"message_id":25791,"from":{"id":6599260349,"is_bot":false,"first_name":"jr_steven™️","username":"estifsteven17","language_code":"en"},"chat":{"id":6599260349,"first_name":"jr_steven™️","username":"estifsteven17","type":"private"},"date":1725881863,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6599260349:
+14:28:36 [32minfo[39m=Message received: /start from userId: 6599260349
+14:28:36 [32minfo[39m=Received /start command from chatId: 6599260349 {"message_id":25792,"from":{"id":6599260349,"is_bot":false,"first_name":"jr_steven™️","username":"estifsteven17","language_code":"en"},"chat":{"id":6599260349,"first_name":"jr_steven™️","username":"estifsteven17","type":"private"},"date":1725881874,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6599260349:
+14:28:36 [32minfo[39m=Message received: /start from userId: 5753257489
+14:28:36 [32minfo[39m=Received /start command from chatId: 5753257489 {"message_id":25793,"from":{"id":5753257489,"is_bot":false,"first_name":"- 𝐙𝖾𝗂𝗇𝖾𝖻 🇹🇳","username":"positive_zeineb","language_code":"ar"},"chat":{"id":5753257489,"first_name":"- 𝐙𝖾𝗂𝗇𝖾𝖻 🇹🇳","username":"positive_zeineb","type":"private"},"date":1725882726,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 5753257489:
+14:28:36 [32minfo[39m=Message received:  from userId: 5753257489
+14:28:36 [32minfo[39m=Message received: لاشی from userId: 6421938875
+14:28:36 [32minfo[39m=Message received: سلام from userId: 6421938875
+14:28:36 [32minfo[39m=Message received: هوی from userId: 6421938875
+14:28:36 [32minfo[39m=Message received: /start from userId: 6292354865
+14:28:36 [32minfo[39m=Received /start command from chatId: 6292354865 {"message_id":25798,"from":{"id":6292354865,"is_bot":false,"first_name":"Akbar","username":"Fateme_z77","language_code":"fa"},"chat":{"id":6292354865,"first_name":"Akbar","username":"Fateme_z77","type":"private"},"date":1725887025,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6292354865:
+14:28:36 [32minfo[39m=Message received: /kill from userId: 6292354865
+14:28:36 [32minfo[39m=Received /kill command {"message_id":25799,"from":{"id":6292354865,"is_bot":false,"first_name":"Akbar","username":"Fateme_z77","language_code":"fa"},"chat":{"id":6292354865,"first_name":"Akbar","username":"Fateme_z77","type":"private"},"date":1725887038,"text":"/kill","entities":[{"offset":0,"length":5,"type":"bot_command"}]}
+14:28:36 [32minfo[39m=Message received: Hello from userId: 6292354865
+14:28:36 [32minfo[39m=Message received: /start from userId: 6292354865
+14:28:36 [32minfo[39m=Received /start command from chatId: 6292354865 {"message_id":25801,"from":{"id":6292354865,"is_bot":false,"first_name":"Akbar","username":"Fateme_z77","language_code":"fa"},"chat":{"id":6292354865,"first_name":"Akbar","username":"Fateme_z77","type":"private"},"date":1725887052,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6292354865:
+14:28:36 [32minfo[39m=Message received: /start from userId: 6741979636
+14:28:36 [32minfo[39m=Received /start command from chatId: 6741979636 {"message_id":25802,"from":{"id":6741979636,"is_bot":false,"first_name":".𝒁𝒂𝒚𝒏𝒂𝒃","language_code":"fa"},"chat":{"id":6741979636,"first_name":".𝒁𝒂𝒚𝒏𝒂𝒃","type":"private"},"date":1725895286,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6741979636:
+14:28:36 [32minfo[39m=Message received: zeinab from userId: 6741979636
+14:28:36 [32minfo[39m=Message received: /start from userId: 6936948899
+14:28:36 [32minfo[39m=Received /start command from chatId: 6936948899 {"message_id":25804,"from":{"id":6936948899,"is_bot":false,"first_name":"گلثوم اصغری هستم ساکن ساری","username":"mis_rajabiii","language_code":"fa"},"chat":{"id":6936948899,"first_name":"گلثوم اصغری هستم ساکن ساری","username":"mis_rajabiii","type":"private"},"date":1725899480,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6936948899:
+14:28:36 [32minfo[39m=Message received: /start from userId: 6936948899
+14:28:36 [32minfo[39m=Received /start command from chatId: 6936948899 {"message_id":25805,"from":{"id":6936948899,"is_bot":false,"first_name":"گلثوم اصغری هستم ساکن ساری","username":"mis_rajabiii","language_code":"fa"},"chat":{"id":6936948899,"first_name":"گلثوم اصغری هستم ساکن ساری","username":"mis_rajabiii","type":"private"},"date":1725900292,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6936948899:
+14:28:36 [32minfo[39m=Message received: /kill from userId: 6936948899
+14:28:36 [32minfo[39m=Received /kill command {"message_id":25806,"from":{"id":6936948899,"is_bot":false,"first_name":"گلثوم اصغری هستم ساکن ساری","username":"mis_rajabiii","language_code":"fa"},"chat":{"id":6936948899,"first_name":"گلثوم اصغری هستم ساکن ساری","username":"mis_rajabiii","type":"private"},"date":1725900297,"text":"/kill","entities":[{"offset":0,"length":5,"type":"bot_command"}]}
+14:28:36 [32minfo[39m=Message received: /clear_all from userId: 6936948899
+14:28:36 [32minfo[39m=Message received: /start from userId: 6774586297
+14:28:36 [32minfo[39m=Received /start command from chatId: 6774586297 {"message_id":25808,"from":{"id":6774586297,"is_bot":false,"first_name":"N.F","username":"n_fazliw","language_code":"fa"},"chat":{"id":6774586297,"first_name":"N.F","username":"n_fazliw","type":"private"},"date":1725901411,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6774586297:
+14:28:36 [32minfo[39m=Message received: /start from userId: 6774586297
+14:28:36 [32minfo[39m=Received /start command from chatId: 6774586297 {"message_id":25809,"from":{"id":6774586297,"is_bot":false,"first_name":"N.F","username":"n_fazliw","language_code":"fa"},"chat":{"id":6774586297,"first_name":"N.F","username":"n_fazliw","type":"private"},"date":1725901417,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 6774586297:
+14:28:36 [32minfo[39m=Message received: /start from userId: 1271211444
+14:28:36 [32minfo[39m=Received /start command from chatId: 1271211444 {"message_id":25810,"from":{"id":1271211444,"is_bot":false,"first_name":"Yegi","username":"Yegi005_Ju11","language_code":"fa"},"chat":{"id":1271211444,"first_name":"Yegi","username":"Yegi005_Ju11","type":"private"},"date":1725904786,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:28:36 [31merror[39m=Error checking and showing Start button for chatId 1271211444:
+14:28:36 [32minfo[39m=Message received: He covered his mouth, tears in his eyes, and panicked, 
+“Yaphisor, I am no longer pure. I have lied to the true God, I 
+have even defiled my body. Oh my God! Yaphisor, what have 
+I done.” 
+Yaphisor glanced at Curtisno, who nodded and quietly 
+injected a little mental power into Cusi’s brain to calm him 
+down. 
+Yaphisor stood up and came behind Cusi, gently untying the 
+scarf and placing his hand on his chest from behind, “Cusi, 
+believe me, the body is only the vessel. As long as your 
+heart remains the same, then you are still the purest of 
+believers. The true God is forgiving, and instead of blaming 
+you, He will comfort you. It is not the body that matters, it is 
+what you say and do and how you behave that matters.” 
+“In a thousand years, when we have all returned to just 
+souls and our flesh is reduced to a shovelful of dust, history 
+will only record our deeds and our bodies will be a thing of from userId: 1271211444
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=7156040829[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=7156040829[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6178923558[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6739320691[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=7202325072[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=984295613[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=7123457040[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=7188996444[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=7060493110[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=7269096540[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=5518804541[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=7450994979[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=1760773180[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6532225009[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=5521501541[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=5521501541[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6643721082[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=7002064290[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6462157394[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=5238042364[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=188038348[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=7230578201[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=7230578201[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6325796173[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=7047875219[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6599260349[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6599260349[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=5753257489[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6292354865[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6292354865[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6741979636[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6936948899[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6936948899[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6774586297[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=6774586297[0m
+14:28:36 [32minfo[39m=[34mReceived /start command from chatId=1271211444[0m
+14:28:36 [31merror[39m=Error logging message:
+14:28:36 [31merror[39m=Error logging message:
+14:28:36 [31merror[39m=Error logging message:
+14:28:36 [32minfo[39m=MongoDB connected
+14:28:36 [32minfo[39m=[32mUser not found for chatId=7156040829. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=7156040829. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=6178923558. Creating new user entry.[0m
+14:28:36 [33mwarn[39m=Forcible end chat attempted but no active chat found for userId: 7156040829
+14:28:36 [32minfo[39m=[32mUser not found for chatId=6739320691. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=7202325072. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=7188996444. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=7060493110. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=7269096540. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=5518804541. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=7450994979. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=1760773180. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=6532225009. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=5521501541. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=5521501541. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=6643721082. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=7002064290. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=6462157394. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=5238042364. Creating new user entry.[0m
+14:28:36 [31merror[39m=Error forcibly ending chat:
+14:28:36 [32minfo[39m=[32mUser not found for chatId=188038348. Creating new user entry.[0m
+14:28:36 [33mwarn[39m=Forcible end chat attempted but no active chat found for userId: 6936948899
+14:28:36 [32minfo[39m=[32mUser not found for chatId=7230578201. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=6325796173. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=7123457040. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=984295613. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=6599260349. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=6599260349. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=5753257489. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=6292354865. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=6292354865. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=6741979636. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=6936948899. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=6936948899. Creating new user entry.[0m
+14:28:36 [32minfo[39m=[32mUser not found for chatId=6774586297. Creating new user entry.[0m
+14:28:37 [32minfo[39m=[32mUser not found for chatId=6774586297. Creating new user entry.[0m
+14:28:37 [32minfo[39m=[32mUser not found for chatId=1271211444. Creating new user entry.[0m
+14:28:37 [32minfo[39m=Logged message 25750 from user in chat 7156040829
+14:28:37 [32minfo[39m=Logged message 25752 from user in chat 7156040829
+14:28:40 [32minfo[39m=MongoDB connected
+14:33:50 [32minfo[39m=Message received: /start from userId: 7502917471
+14:33:50 [32minfo[39m=Received /start command from chatId: 7502917471 {"message_id":25815,"from":{"id":7502917471,"is_bot":false,"first_name":"Kate","last_name":"Winchester","username":"Hi_ImKate","language_code":"en"},"chat":{"id":7502917471,"first_name":"Kate","last_name":"Winchester","username":"Hi_ImKate","type":"private"},"date":1725906829,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:33:50 [31merror[39m=Error checking and showing Start button for chatId 7502917471:
+14:33:50 [32minfo[39m=[34mReceived /start command from chatId=7502917471[0m
+14:33:50 [32minfo[39m=[32mUser not found for chatId=7502917471. Creating new user entry.[0m
+14:33:50 [32minfo[39m=Logged message 25815 from user in chat 7502917471
+14:33:50 [32minfo[39m=[32mNew user created with chatId=7502917471[0m
+14:33:50 [32minfo[39m=[34mStarting handleStart for chatId=7502917471[0m
+14:33:51 [32minfo[39m=Logged message 25816 from bot in chat 7502917471
+14:33:52 [32minfo[39m=[32mDeleted initial message with id=25815 for chatId=7502917471[0m
+14:33:52 [31merror[39m=Error logging message:
+14:33:52 [32minfo[39m=Logged message 25816 from bot in chat 7502917471
+14:33:53 [32minfo[39m=[32mDeleted 'Please wait...' message with id=25816 for chatId=7502917471[0m
+14:33:55 [32minfo[39m=Callback query received: lang_en from userId: 7502917471
+14:33:55 [32minfo[39m=[34mLanguage selection initiated for chatId=7502917471, language=en[0m
+14:33:55 [32minfo[39m=[32mLanguage set to en for userId=7502917471[0m
+14:33:56 [32minfo[39m=[34mCalling handleRegionSelection for chatId=7502917471[0m
+14:33:56 [32minfo[39m=[34mRegion selection initiated for chatId=7502917471, language=en[0m
+14:33:56 [32minfo[39m=[34mRegion selection options sent for chatId=7502917471[0m
+14:33:56 [32minfo[39m=Language selected: en for userId: 7502917471
+14:33:57 [32minfo[39m=Callback query received: region_us from userId: 7502917471
+14:33:57 [32minfo[39m=[34mRegion change initiated for chatId=7502917471, region=us[0m
+14:33:57 [32minfo[39m=[34mSetting region=us, dialect=en-us for userId=7502917471[0m
+14:33:57 [32minfo[39m=[32mRegion set to us for userId=7502917471[0m
+14:33:58 [32minfo[39m=[34mDialect selection initiated for region=en-us[0m
+14:33:58 [31merror[39m=[31mError setting region for userId=7502917471[0m:
+14:33:58 [32minfo[39m=Region selected: us for userId: 7502917471
+14:35:33 [32minfo[39m=MongoDB connected
+14:35:38 [32minfo[39m=Callback query received: region_us from userId: 7502917471
+14:35:38 [32minfo[39m=[34mRegion change initiated for chatId=7502917471, region=us[0m
+14:35:38 [32minfo[39m=[34mSetting region=us, dialect=en-us for userId=7502917471[0m
+14:35:38 [32minfo[39m=[32mRegion set to us for userId=7502917471[0m
+14:35:38 [32minfo[39m=[34mDialect selection initiated for region=en-us[0m
+14:35:38 [31merror[39m=[31mError setting region for userId=7502917471[0m:
+14:35:39 [32minfo[39m=Region selected: us for userId: 7502917471
+14:35:58 [32minfo[39m=Message received: /cldb from userId: 7502917471
+14:35:58 [32minfo[39m=Logged message 25822 from user in chat 7502917471
+14:35:59 [32minfo[39m=Database cleared
+14:35:59 [32minfo[39m=[34mReceived /start command from chatId=6498304586[0m
+14:35:59 [32minfo[39m=[32mUser not found for chatId=6498304586. Creating new user entry.[0m
+14:35:59 [31merror[39m=Error clearing database:
+14:36:02 [32minfo[39m=Message received: /cldb from userId: 7502917471
+14:36:02 [32minfo[39m=Logged message 25825 from user in chat 7502917471
+14:36:02 [32minfo[39m=Database cleared
+14:36:04 [32minfo[39m=Message received: /start from userId: 7502917471
+14:36:04 [32minfo[39m=Received /start command from chatId: 7502917471 {"message_id":25827,"from":{"id":7502917471,"is_bot":false,"first_name":"Kate","last_name":"Winchester","username":"Hi_ImKate","language_code":"en"},"chat":{"id":7502917471,"first_name":"Kate","last_name":"Winchester","username":"Hi_ImKate","type":"private"},"date":1725906963,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+14:36:04 [31merror[39m=Error checking and showing Start button for chatId 7502917471:
+14:36:04 [32minfo[39m=[34mReceived /start command from chatId=7502917471[0m
+14:36:04 [32minfo[39m=[32mUser not found for chatId=7502917471. Creating new user entry.[0m
+14:36:04 [32minfo[39m=Logged message 25827 from user in chat 7502917471
+14:36:04 [32minfo[39m=[32mNew user created with chatId=7502917471[0m
+14:36:04 [32minfo[39m=[34mStarting handleStart for chatId=7502917471[0m
+14:36:05 [32minfo[39m=Logged message 25828 from bot in chat 7502917471
+14:36:06 [32minfo[39m=[32mDeleted initial message with id=25827 for chatId=7502917471[0m
+14:36:06 [31merror[39m=Error logging message:
+14:36:06 [32minfo[39m=Logged message 25828 from bot in chat 7502917471
+14:36:07 [32minfo[39m=[32mDeleted 'Please wait...' message with id=25828 for chatId=7502917471[0m
+14:36:09 [32minfo[39m=Callback query received: lang_en from userId: 7502917471
+14:36:09 [32minfo[39m=[34mLanguage selection initiated for chatId=7502917471, language=en[0m
+14:36:10 [32minfo[39m=[32mLanguage set to en for userId=7502917471[0m
+14:36:10 [32minfo[39m=[34mCalling handleRegionSelection for chatId=7502917471[0m
+14:36:10 [32minfo[39m=[34mRegion selection initiated for chatId=7502917471, language=en[0m
+14:36:10 [32minfo[39m=[34mRegion selection options sent for chatId=7502917471[0m
+14:36:10 [32minfo[39m=Language selected: en for userId: 7502917471
+14:36:11 [32minfo[39m=Callback query received: region_us from userId: 7502917471
+14:36:11 [32minfo[39m=[34mRegion change initiated for chatId=7502917471, region=us[0m
+14:36:11 [32minfo[39m=[34mSetting region=us, dialect=en-us for userId=7502917471[0m
+14:36:11 [32minfo[39m=[32mRegion set to us for userId=7502917471[0m
+14:36:12 [32minfo[39m=[34mDialect selection initiated for region=en-us[0m
+14:36:12 [31merror[39m=[31mError setting region for userId=7502917471[0m:
+14:36:12 [32minfo[39m=Region selected: us for userId: 7502917471

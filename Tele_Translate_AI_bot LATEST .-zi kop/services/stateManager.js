@@ -23,7 +23,7 @@ const clearState = (userId) => {
 const shouldAnalyzeContext = (userId, messageCount) => {
   logger.info(`Checking if should analyze context for userId: ${userId} with messageCount: ${messageCount}`);
   const state = getState(userId);
-  if (!state.lastAnalysis || (Date.now() - state.lastAnalysis) > 300000 || messageCount % 3 === 0) { // Analyze every 3 messages or every 5 minutes
+  if (!state.lastAnalysis || (Date.now() - state.lastAnalysis) > 300000 || messageCount % 3 === 0) {
     setState(userId, { lastAnalysis: Date.now() });
     logger.info(`Context analysis required for userId ${userId}`);
     return true;

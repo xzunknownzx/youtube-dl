@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Schema for the Conversation model
 const conversationSchema = new mongoose.Schema({
   users: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
   messages: [
@@ -10,7 +11,7 @@ const conversationSchema = new mongoose.Schema({
   ],
   summary: { type: String },
   lastUpdated: { type: Date, default: Date.now },
-  connectionCode: { type: String, unique: true, sparse: true } // Ensure unique and sparse index
+  connectionCode: { type: String, unique: true, sparse: true }
 });
 
 const Conversation = mongoose.model('Conversation', conversationSchema);
