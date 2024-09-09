@@ -240,17 +240,15 @@ async function handleRegionChange(bot, message, region) {
     try {
         let user = await User.findOne({ userId: userId });
         if (user) {
-            // Set region and dialect based on the mapping
+            // Set region
             user.region = region;
-            user.dialect = dialectMapping[region] || `${user.language}-${region}`;
+            
+            // Set dialect based on the language and region
+            const languageCode = user.language.replace('lang_', '');
+            user.dialect = `${languageCode}-${region.toLowerCase().replace(/ /g, '_')}`;
 
             // Log the values being set
             logger.info(`${colors.blue}Setting region=${user.region}, dialect=${user.dialect} for userId=${userId}${colors.reset}`);
-
-            // Ensure that both region and dialect are properly set before saving
-            if (!user.region || !user.dialect) {
-                throw new Error(`Invalid region (${user.region}) or dialect (${user.dialect})`);
-            }
 
             // Save the user details
             await user.save();
@@ -258,15 +256,16 @@ async function handleRegionChange(bot, message, region) {
 
             // Proceed with dialect selection
             await new Promise(resolve => setTimeout(resolve, 200));
-            //await bot.deleteMessage(userId, message.message_id);
             await handleDialectSelection(bot, message, user.dialect);
         } else {
-            await bot.sendMessage(userId, 'User not found.');
+            throw new Error('User not found');
         }
     } catch (error) {
-        // Enhanced logging to capture more details about the error
         logger.error(`${colors.red}Error setting region for userId=${userId}${colors.reset}:`, error.message, error.stack);
-        await bot.sendMessage(userId, `Failed to set region. Error: ${error.message}`);
+        await bot.sendMessage(userId, `Failed to set region. Please try again or contact support.`);
+        
+        // Return to the main menu or previous step
+        await sendInitialMenu(bot, userId);
     }
 }
 
@@ -419,7 +418,9 @@ async function handleJoinChat(bot, message) {
   let invalidMessageId;
 
   const onMessage = async (msg) => {
-    if (msg.chat.id !== userId) return;
+    if (msg.chat.id !== userId) {
+      return;
+    }
 
     const connectionCode = msg.text.trim().toUpperCase();
     logger.info(`Received connection code: ${connectionCode} for userId: ${userId}`);
@@ -829,6 +830,7 @@ async function getMessages(chatId) {
     });
 
     if (response.data.ok) {
+      // sourcery skip: inline-immediately-returned-variable
       const messages = response.data.result
         .filter(update => update.message && update.message.chat && update.message.chat.id === chatId)
         .map(update => update.message.message_id);
@@ -866,7 +868,7 @@ async function handleClearHistoryConfirmation(bot, chatId) {
     reply_markup: {
       inline_keyboard: [
         [{ text: 'Yes, delete', callback_data: 'clear_history_yes' }],
-        [{ text: 'No, don’t delete', callback_data: 'clear_history_no' }]
+        [{ text: 'No, don\'t delete', callback_data: 'clear_history_no' }]
       ]
     }
   };
@@ -875,10 +877,12 @@ async function handleClearHistoryConfirmation(bot, chatId) {
 
 async function handleClearHistoryConfirmation(bot, callbackQuery) {
   const chatId = callbackQuery.message.chat.id;
-  const data = callbackQuery.data;
+  const { data } = callbackQuery;
 
   const user = await User.findOne({ userId: chatId });
-  if (!user) return;
+  if (!user) {
+    return;
+  }
 
   if (data === 'clear_history_yes') {
     const messages = await getMessages(chatId);

@@ -22,18 +22,14 @@ function constructLanguageIdentifier(language, region) {
   }
 
   const languageCode = language.replace('lang_', ''); // e.g., 'lang_en' -> 'en'
-  const regionCode = regions[language]?.find(r => r === region) || ''; // Check if region matches one in the list
-  const dialectCode = dialectMapping[region] || '';
-
-  if (regionCode && dialectCode) {
-    console.log(`Constructing language identifier with dialect: ${languageCode}-${dialectCode}`);
-    return `${languageCode}-${dialectCode}`; // e.g., 'en-US'
-  } else if (regionCode) {
-    console.log(`Constructing language identifier with region only: ${languageCode}-${regionCode.toUpperCase()}`);
-    return `${languageCode}-${regionCode.toUpperCase()}`; // Fallback to simple language-region format
+  
+  if (region) {
+    const regionCode = region.toLowerCase().replace(/ /g, '_');
+    console.log(`Constructing language identifier with region: ${languageCode}-${regionCode}`);
+    return `${languageCode}-${regionCode}`;
   } else {
     console.log(`Constructing language identifier with language only: ${languageCode}`);
-    return languageCode; // Fallback to just language code
+    return languageCode;
   }
 }
 

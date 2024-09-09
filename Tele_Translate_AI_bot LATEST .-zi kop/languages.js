@@ -1,4 +1,4 @@
-const languageOptions = [
+ const languageOptions = [
     { text: 'English', callback_data: 'lang_en' },
     { text: 'Ukrainian', callback_data: 'lang_uk' },
     { text: 'Dutch', callback_data: 'lang_nl' },
