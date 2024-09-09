@@ -25,29 +25,29 @@ const languageOptions = [
 ];
 
 const regions = {
-    'lang_en': ['US', 'UK', 'Australia'],
-    'lang_uk': ['Kyiv', 'Chernihiv', 'Zaporizhzhia', 'Vinnytsia', 'Chernivtsi', 'Lviv', 'Ivano-Frankivsk'],
-    'lang_nl': ['Hollandic', 'Brabantic', 'Limburgish', 'Zeelandic', 'West Flemish', 'East Flemish', 'Flemish', 'Frisian', 'Achterhoeks', 'Low Saxon', 'Utrecht Dialect', 'Amelands'],
-    'lang_es': ['Spain', 'Mexico', 'Argentina'],
-    'lang_ru': ['Russia', 'Ukraine', 'Kazakhstan'],
-    'lang_zh': ['China', 'Taiwan', 'Singapore'],
-    'lang_fr': ['France', 'Canada', 'Belgium', 'Algeria'],
-    'lang_ja': ['Japan'],
-    'lang_fa': ['Iran', 'Afghanistan', 'Tajikistan'],
-    'lang_de': ['Germany', 'Austria', 'Switzerland'],
-    'lang_bam': ['Cameroon'],
-    'lang_ar': ['Algeria (Darija)', 'Morocco (Darija)', 'Tunisia (Darija)', 'Egyptian', 'Levantine'],
-    'lang_pt': ['Portugal', 'Brazil'],
-    'lang_it': ['Italy', 'Switzerland'],
-    'lang_bn': ['Bangladesh', 'West Bengal', 'Dhaka', 'Chittagong', 'Sylhet', 'Rangpur'],
-    'lang_hi': ['Standard Hindi', 'Bhojpuri', 'Awadhi', 'Braj', 'Haryanvi', 'Rajasthani'],
-    'lang_ur': ['Pakistan', 'India', 'Dakhini', 'Rekhta', 'Hyderabadi'],
-    'lang_pa': ['Eastern (India)', 'Western (Pakistan)', 'Majhi', 'Doabi', 'Malwai', 'Pothwari'],
-    'lang_vi': ['Northern', 'North-Central', 'Central', 'Southern', 'Hue', 'Hanoi', 'Saigon'],
-    'lang_yo': ['Standard Yoruba', 'Oyo', 'Ibadan', 'Ijebu', 'Ekiti', 'Ife', 'Ondo', 'Owo', 'Ijesa'],
-    'lang_amz': ['Tamazight', 'Tashelhit', 'Tarifit', 'Kabyle', 'Chaoui', 'Tuareg', 'Zenaga'],
-    'lang_ro': ['Muntenian', 'Moldavian', 'Transylvanian', 'Banat', 'Aromanian', 'Megleno-Romanian', 'Istro-Romanian'],
-    'lang_hr': ['Croatia', 'Bosnia and Herzegovina', 'Serbia', 'Montenegro']
+    'lang_en': ['US', 'UK', 'Australia', 'Canada', 'Ireland', 'New Zealand', 'South Africa', 'Jamaica', 'Singapore', 'India'],
+    'lang_uk': ['Kyiv', 'Lviv', 'Kharkiv', 'Odesa', 'Dnipro', 'Donetsk', 'Zaporizhzhia', 'Vinnytsia', 'Chernivtsi', 'Ivano-Frankivsk', 'Ternopil', 'Zakarpattia'],
+    'lang_nl': ['Netherlands', 'Belgium', 'Suriname', 'Aruba', 'Curaçao', 'Sint Maarten'],
+    'lang_fr': ['France', 'Canada', 'Belgium', 'Switzerland', 'Monaco', 'Luxembourg', 'Algeria', 'Morocco', 'Tunisia', 'Côte d\'Ivoire', 'Senegal', 'Haiti'],
+    'lang_de': ['Germany', 'Austria', 'Switzerland', 'Liechtenstein', 'Luxembourg', 'Belgium'],
+    'lang_es': ['Spain', 'Mexico', 'Argentina', 'Colombia', 'Peru', 'Venezuela', 'Chile', 'Ecuador', 'Guatemala', 'Cuba', 'Dominican Republic', 'Honduras', 'Paraguay', 'El Salvador', 'Nicaragua', 'Costa Rica', 'Puerto Rico', 'Uruguay', 'Panama', 'Equatorial Guinea'],
+    'lang_pt': ['Portugal', 'Brazil', 'Angola', 'Mozambique', 'Cape Verde', 'Guinea-Bissau', 'São Tomé and Príncipe', 'East Timor', 'Equatorial Guinea', 'Macau'],
+    'lang_it': ['Italy', 'Switzerland', 'San Marino', 'Vatican City', 'Slovenia', 'Croatia'],
+    'lang_ru': ['Russia', 'Belarus', 'Kazakhstan', 'Kyrgyzstan', 'Tajikistan', 'Ukraine', 'Moldova', 'Latvia', 'Estonia', 'Lithuania'],
+    'lang_zh': ['China', 'Taiwan', 'Singapore', 'Malaysia', 'Indonesia'],
+    'lang_ja': ['Japan', 'Brazil', 'United States', 'Philippines'],
+    'lang_ar': ['Egypt', 'Saudi Arabia', 'Morocco', 'Algeria', 'Sudan', 'Iraq', 'Syria', 'Tunisia', 'Jordan', 'Libya', 'Lebanon', 'Yemen', 'Oman', 'UAE', 'Kuwait', 'Qatar', 'Bahrain', 'Mauritania', 'Somalia', 'Djibouti', 'Comoros'],
+    'lang_fa': ['Iran', 'Afghanistan', 'Tajikistan', 'Uzbekistan'],
+    'lang_bn': ['Bangladesh', 'India', 'Saudi Arabia', 'UAE', 'UK', 'USA'],
+    'lang_hi': ['India', 'Nepal', 'Fiji', 'UAE', 'USA', 'UK'],
+    'lang_ur': ['Pakistan', 'India', 'UAE', 'UK', 'USA', 'Canada'],
+    'lang_pa': ['India', 'Pakistan', 'UK', 'Canada', 'USA', 'Australia'],
+    'lang_vi': ['Vietnam', 'USA', 'Australia', 'Canada', 'France', 'Germany'],
+    'lang_yo': ['Nigeria', 'Benin', 'Togo', 'UK', 'USA'],
+    'lang_amz': ['Morocco', 'Algeria', 'Libya', 'Tunisia', 'Mauritania', 'Mali', 'Niger', 'Burkina Faso'],
+    'lang_ro': ['Romania', 'Moldova', 'Ukraine', 'Serbia', 'Hungary', 'Bulgaria'],
+    'lang_bam': ['Cameroon', 'Nigeria'],
+    'lang_hr': ['Croatia', 'Bosnia and Herzegovina', 'Serbia', 'Montenegro', 'Austria', 'Hungary', 'Italy']
 };
 
 const dialectMapping = {
@@ -162,8 +162,43 @@ const dialectMapping = {
     'Montenegro': 'hr-ME'
 };
 
+const dialects = {
+    'en-US': ['General American', 'Southern', 'New England', 'Midwestern', 'African American Vernacular (AAVE)', 'Appalachian', 'Californian', 'New York City', 'Boston', 'Chicago'],
+    'en-GB': ['Received Pronunciation', 'Cockney', 'Geordie', 'Scouse', 'Yorkshire', 'Scottish English', 'Welsh English', 'Northern Irish', 'West Country', 'Brummie'],
+    'en-AU': ['General Australian', 'Broad Australian', 'Cultivated Australian', 'Aboriginal English', 'Torres Strait Creole'],
+    'uk-UA': ['Standard Ukrainian', 'Polissian', 'Podillian', 'Galician', 'Boyko', 'Lemko', 'Hutsul', 'Sloboda', 'Steppe', 'Transcarpathian'],
+    'nl-NL': ['Standard Dutch', 'Hollandic', 'Brabantian', 'Limburgish', 'Frisian', 'Low Saxon', 'Zeelandic', 'Achterhoeks', 'Veluws', 'Gronings'],
+    'nl-BE': ['Flemish', 'West Flemish', 'East Flemish', 'Brabantian', 'Limburgish', 'Antwerp'],
+    'fr-FR': ['Standard French', 'Parisian', 'Meridional', 'Alsatian French', 'Corsican French', 'Occitan', 'Breton French', 'Norman French'],
+    'fr-CA': ['Quebec French', 'Acadian French', 'Franco-Ontarian', 'Métis French', 'Newfoundland French'],
+    'de-DE': ['Standard German', 'Bavarian', 'Alemannic', 'Low German', 'Franconian', 'Upper Saxon', 'Thuringian', 'Hessian'],
+    'de-AT': ['Austrian Standard German', 'Viennese German', 'Vorarlbergisch', 'Tyrolean', 'Carinthian'],
+    'es-ES': ['Castilian', 'Andalusian', 'Canarian', 'Murcian', 'Extremaduran', 'Aragonese', 'Asturian', 'Galician'],
+    'es-MX': ['Mexican Spanish', 'Yucatec Spanish', 'Northern Mexican Spanish', 'Central Mexican Spanish'],
+    'pt-PT': ['European Portuguese', 'Azorean Portuguese', 'Madeiran Portuguese', 'Alentejo', 'Algarve'],
+    'pt-BR': ['Brazilian Portuguese', 'Carioca', 'Paulistano', 'Nordestino', 'Gaúcho', 'Amazofonia'],
+    'it-IT': ['Standard Italian', 'Tuscan', 'Romanesco', 'Neapolitan', 'Sicilian', 'Venetian', 'Sardinian', 'Piedmontese'],
+    'ru-RU': ['Standard Russian', 'Moscow dialect', 'Saint Petersburg dialect', 'Southern Russian', 'Northern Russian', 'Siberian', 'Far Eastern'],
+    'zh-CN': ['Standard Mandarin', 'Cantonese', 'Shanghainese', 'Sichuanese', 'Hakka', 'Min', 'Gan', 'Xiang'],
+    'ja-JP': ['Standard Japanese', 'Kansai-ben', 'Tohoku-ben', 'Kyushu-ben', 'Okinawan', 'Hokkaido-ben', 'Shikoku-ben'],
+    'ar-EG': ['Egyptian Arabic', 'Cairene', 'Alexandrian', 'Sa\'idi Arabic', 'Bedouin'],
+    'ar-SA': ['Najdi Arabic', 'Hejazi Arabic', 'Gulf Arabic', 'Bedouin'],
+    'fa-IR': ['Western Persian', 'Tehrani', 'Isfahani', 'Shirazi', 'Mashhadi'],
+    'bn-BD': ['Standard Bengali', 'Chittagonian', 'Sylheti', 'Rangpuri', 'Noakhali'],
+    'hi-IN': ['Standard Hindi', 'Braj Bhasha', 'Awadhi', 'Bhojpuri', 'Bundeli', 'Haryanvi'],
+    'ur-PK': ['Standard Urdu', 'Punjabi Urdu', 'Sindhi Urdu', 'Karachi Urdu'],
+    'pa-IN': ['Majhi', 'Doabi', 'Malwai', 'Powadhi', 'Puadhi'],
+    'vi-VN': ['Northern Vietnamese', 'Central Vietnamese', 'Southern Vietnamese', 'Hue dialect', 'Hanoi dialect', 'Saigon dialect'],
+    'yo-NG': ['Oyo Yoruba', 'Ibadan Yoruba', 'Ijebu Yoruba', 'Ekiti Yoruba', 'Ife Yoruba'],
+    'amz-MA': ['Tashelhit', 'Central Atlas Tamazight', 'Tarifit', 'Tachelhit'],
+    'ro-RO': ['Daco-Romanian', 'Aromanian', 'Megleno-Romanian', 'Istro-Romanian', 'Moldavian'],
+    'bam-CM': ['Fe\'fe\'', 'Ghomala\'', 'Medumba', 'Yemba', 'Ngiemboon'],
+    'hr-HR': ['Kajkavian', 'Chakavian', 'Shtokavian', 'Istrian', 'Dalmatian']
+};
+
 module.exports = {
     languageOptions,
     regions,
-    dialectMapping
+    dialectMapping,
+    dialects
 };

@@ -15,25 +15,6 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') }); // Load environment
 const { regions, dialectMapping } = require('./languages.js'); // Import necessary mappings
 const os = require('os');
 
-function constructLanguageIdentifier(language, region) {
-  if (!language) {
-    console.error('Error: Language is undefined.');
-    return 'en'; // Default to 'en' if language is undefined
-  }
-
-  const languageCode = language.replace('lang_', ''); // e.g., 'lang_en' -> 'en'
-  
-  if (region) {
-    const regionCode = region.toLowerCase().replace(/ /g, '_');
-    console.log(`Constructing language identifier with region: ${languageCode}-${regionCode}`);
-    return `${languageCode}-${regionCode}`;
-  } else {
-    console.log(`Constructing language identifier with language only: ${languageCode}`);
-    return languageCode;
-  }
-}
-
-
 // ANSI color codes for logging (Optional)
 const colors = {  
     reset: "\x1b[0m",  
@@ -70,6 +51,70 @@ const getLanguageWithDialect = (language, region, dialect) => {
     return language;
   }
 };
+// Construct language identifier using the language and region/dialect
+function constructLanguageIdentifier(language, region) {
+  if (!language) {
+    console.error('Error: Language is undefined.');
+    return 'en-US'; 
+  }
+
+  const languageCode = language.replace('lang_', ''); 
+  
+  if (region) {
+    const dialectCode = dialectMapping[region] || `${languageCode}-${region.toUpperCase()}`;
+    console.log(`Constructing language identifier: ${dialectCode}`);
+    return dialectCode;
+  } else {
+    console.log(`Constructing language identifier with language only: ${languageCode}`);
+    return languageCode;
+  }
+}
+
+// Transcribe audio with Azure API
+async function transcribeAudio(filePath, languageIdentifier) {
+  console.log(`Step: Audio Transcription Started for filePath: ${filePath}, languageWithDialect: ${languageIdentifier}`);
+
+  const form = new FormData();
+  form.append('file', fs.createReadStream(filePath));
+
+  try {
+    console.log(`Step: Form Data Prepared for Transcription`);
+    const response = await axios.post(
+      `${process.env.AZURE_OPENAI_WHISPER_ENDPOINT}/openai/deployments/${process.env.AZURE_OPENAI_WHISPER_DEPLOYMENT}/audio/transcriptions?api-version=${process.env.AZURE_OPENAI_WHISPER_API_VERSION}&language=${languageIdentifier}`,
+      form,
+      {
+        headers: {
+          ...form.getHeaders(),
+          'api-key': process.env.AZURE_OPENAI_WHISPER_API_KEY,
+        },
+        maxContentLength: 25 * 1024 * 1024,
+        maxBodyLength: 25 * 1024 * 1024,
+      }
+    );
+
+    console.log(`Step: Received Response - Status: ${response.status}`);
+    
+    if (response.status === 200 && response.data) {
+      console.log(`Step: Audio Transcription Completed Successfully`);
+      return response.data; 
+    } else {
+      console.error(`Error: Transcription Failed - Status: ${response.status}, Data: ${JSON.stringify(response.data)}`);
+      throw new Error('Failed to transcribe audio');
+    }
+  } catch (error) {
+    console.error(`Error: During Audio Transcription - ${error.message}`);
+    if (error.response) {
+      console.error(`Error Details: Response Data: ${JSON.stringify(error.response.data)}`);
+      console.error(`Response Status: ${error.response.status}`);
+      console.error(`Response Headers: ${JSON.stringify(error.response.headers)}`);
+    } else if (error.request) {
+      console.error(`Error: No Response Received - Request Data: ${error.request}`);
+    } else {
+      console.error(`Unexpected Error: ${error.message}`);
+    }
+    throw error;
+  }
+}
 
 const translateVerbatim = async (message, userLanguage, region, dialect) => {  
   const languageWithDialect = getLanguageWithDialect(userLanguage, region, dialect);  
@@ -100,51 +145,6 @@ const translateVerbatim = async (message, userLanguage, region, dialect) => {
     throw new Error('Failed to translate verbatim');  
   }  
 };  
-
-async function transcribeAudio(filePath, languageIdentifier) {
-  console.log(`Step: Audio Transcription Started for filePath: ${filePath}, languageWithDialect: ${languageIdentifier}`);
-
-  const form = new FormData();
-  form.append('file', fs.createReadStream(filePath));
-
-  try {
-    console.log(`Step: Form Data Prepared for Transcription`);
-    const response = await axios.post(
-      `${process.env.AZURE_OPENAI_WHISPER_ENDPOINT}/openai/deployments/${process.env.AZURE_OPENAI_WHISPER_DEPLOYMENT}/audio/transcriptions?api-version=${process.env.AZURE_OPENAI_WHISPER_API_VERSION}&language=${languageIdentifier}`,
-      form,
-      {
-        headers: {
-          ...form.getHeaders(),
-          'api-key': process.env.AZURE_OPENAI_WHISPER_API_KEY,
-        },
-        maxContentLength: 25 * 1024 * 1024,
-        maxBodyLength: 25 * 1024 * 1024,
-      }
-    );
-
-    console.log(`Step: Received Response - Status: ${response.status}`);
-    
-    if (response.status === 200 && response.data) {
-      console.log(`Step: Audio Transcription Completed Successfully`);
-      return response.data; // Return the transcription data
-    } else {
-      console.error(`Error: Transcription Failed - Status: ${response.status}, Data: ${JSON.stringify(response.data)}`);
-      throw new Error('Failed to transcribe audio');
-    }
-  } catch (error) {
-    console.error(`Error: During Audio Transcription - ${error.message}`);
-    if (error.response) {
-      console.error(`Error Details: Response Data: ${JSON.stringify(error.response.data)}`);
-      console.error(`Response Status: ${error.response.status}`);
-      console.error(`Response Headers: ${JSON.stringify(error.response.headers)}`);
-    } else if (error.request) {
-      console.error(`Error: No Response Received - Request Data: ${error.request}`);
-    } else {
-      console.error(`Unexpected Error: ${error.message}`);
-    }
-    throw error;
-  }
-}
 
 const translateMessage = async (message, context, sourceUser, targetUser, conversationHistory) => {
   const sourceLanguageIdentifier = constructLanguageIdentifier(sourceUser.language, sourceUser.location);
@@ -217,8 +217,7 @@ const analyzeContext = async (messages, user) => {
     console.error(`Error: Context Analysis Failed - ${error.message}`);
     throw new Error('Failed to analyze context');
   }
-};
-  
+};  
 const generateAdvancedPrompt = (message, context, sourceUser, targetUser, conversationHistory) => {
   const sourceLanguageWithDialect = getLanguageWithDialect(sourceUser.language, sourceUser.region, sourceUser.dialect);
   const targetLanguageWithDialect = getLanguageWithDialect(targetUser.language, targetUser.region, targetUser.dialect);

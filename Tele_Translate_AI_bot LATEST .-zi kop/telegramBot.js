@@ -7,23 +7,27 @@ const Conversation = require('./models/Conversation');
 const Message = require('./models/Message');
 const {
   handleStart,
-  handleLanguageChange,
+  handleLanguageSelection,
+  handleRegionChange,
+  handleRegionSelection,
   handleDialectChange,
+  handleDialectSelection,
+  sendInitialMenu,
+  handleSettings,
   handleCreateChat,
   handleJoinChat,
-  handleRegionChange,
-  handleMessage,
   handleEndChat,
   handleKillChat,
-  handleSettings,
+  handleMessage,
+  handleMessages,
   handleOverride,
-  sendInitialMenu,
-  handleRedoTranslation,
-  handleExplainThis,
   getOriginalText,
   getEnhancedText,
+  updateConversation,
   deleteCurrentMessage,
-  handleLanguageSelection
+  getCurrentMessageId,
+  handleRedoTranslation,
+  handleExplainThis
 } = require('./services/chatService');
 const { logMessage } = require('./messageUtils');
 const { getState, setState } = require('./services/stateManager');

@@ -94,3 +94,262 @@
 15:06:45 [32minfo[39m=[34mDialect selection initiated for region=uk-ivano-frankivsk[0m
 15:06:45 [31merror[39m=[31mError setting region for userId=7294983292[0m:
 15:06:46 [32minfo[39m=Region selected: ivano-frankivsk for userId: 7294983292
+15:12:47 [32minfo[39m=MongoDB connected
+15:12:53 [32minfo[39m=Callback query received: settings from userId: 7294983292
+15:12:55 [32minfo[39m=Callback query received: change_language from userId: 7294983292
+15:12:55 [32minfo[39m=[34mReceived /start command from chatId=7294983292[0m
+15:12:55 [32minfo[39m=[32mUser found for chatId=7294983292[0m
+15:12:55 [32minfo[39m=[34mStarting handleStart for chatId=7294983292[0m
+15:12:55 [32minfo[39m=Logged message 25864 from bot in chat 7294983292
+15:12:56 [32minfo[39m=[32mDeleted initial message with id=25863 for chatId=7294983292[0m
+15:12:56 [31merror[39m=Error logging message:
+15:12:56 [32minfo[39m=Logged message 25864 from bot in chat 7294983292
+15:12:57 [32minfo[39m=[32mDeleted 'Please wait...' message with id=25864 for chatId=7294983292[0m
+15:12:59 [32minfo[39m=Callback query received: lang_uk from userId: 7294983292
+15:12:59 [32minfo[39m=[34mLanguage selection initiated for chatId=7294983292, language=uk[0m
+15:13:00 [32minfo[39m=[32mLanguage set to uk for userId=7294983292[0m
+15:13:00 [32minfo[39m=[34mCalling handleRegionSelection for chatId=7294983292[0m
+15:13:00 [32minfo[39m=[34mRegion selection initiated for chatId=7294983292, language=uk[0m
+15:13:01 [32minfo[39m=[34mRegion selection options sent for chatId=7294983292[0m
+15:13:01 [32minfo[39m=Language selected: uk for userId: 7294983292
+15:13:02 [32minfo[39m=Callback query received: region_zaporizhzhia from userId: 7294983292
+15:13:02 [32minfo[39m=[34mRegion change initiated for chatId=7294983292, region=zaporizhzhia[0m
+15:13:02 [32minfo[39m=[34mSetting region=zaporizhzhia, dialect=uk-zaporizhzhia for userId=7294983292[0m
+15:13:02 [32minfo[39m=[32mRegion set to zaporizhzhia for userId=7294983292[0m
+15:13:02 [32minfo[39m=[34mDialect selection initiated for region=uk-zaporizhzhia[0m
+15:13:02 [31merror[39m=[31mError setting region for userId=7294983292[0m:
+15:13:03 [32minfo[39m=Region selected: zaporizhzhia for userId: 7294983292
+15:16:09 [32minfo[39m=MongoDB connected
+15:16:42 [32minfo[39m=Message received: /start from userId: 7049793640
+15:16:42 [32minfo[39m=Received /start command from chatId: 7049793640 {"message_id":25869,"from":{"id":7049793640,"is_bot":false,"first_name":"ELINA","username":"ELi_pow_19","language_code":"fa"},"chat":{"id":7049793640,"first_name":"ELINA","username":"ELi_pow_19","type":"private"},"date":1725909401,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+15:16:42 [31merror[39m=Error checking and showing Start button for chatId 7049793640:
+15:16:42 [32minfo[39m=[34mReceived /start command from chatId=7049793640[0m
+15:16:42 [32minfo[39m=[32mUser not found for chatId=7049793640. Creating new user entry.[0m
+15:16:42 [32minfo[39m=Logged message 25869 from user in chat 7049793640
+15:16:42 [32minfo[39m=[32mNew user created with chatId=7049793640[0m
+15:16:42 [32minfo[39m=[34mStarting handleStart for chatId=7049793640[0m
+15:16:43 [32minfo[39m=Logged message 25870 from bot in chat 7049793640
+15:16:44 [32minfo[39m=[32mDeleted initial message with id=25869 for chatId=7049793640[0m
+15:16:44 [31merror[39m=Error logging message:
+15:16:44 [32minfo[39m=Logged message 25870 from bot in chat 7049793640
+15:16:45 [32minfo[39m=[32mDeleted 'Please wait...' message with id=25870 for chatId=7049793640[0m
+15:16:48 [32minfo[39m=Callback query received: lang_pa from userId: 7049793640
+15:16:48 [32minfo[39m=[34mLanguage selection initiated for chatId=7049793640, language=pa[0m
+15:16:48 [32minfo[39m=[32mLanguage set to pa for userId=7049793640[0m
+15:16:49 [32minfo[39m=[34mCalling handleRegionSelection for chatId=7049793640[0m
+15:16:49 [32minfo[39m=[34mRegion selection initiated for chatId=7049793640, language=pa[0m
+15:16:49 [32minfo[39m=[34mRegion selection options sent for chatId=7049793640[0m
+15:16:49 [32minfo[39m=Language selected: pa for userId: 7049793640
+15:41:59 [32minfo[39m=[32mChatService initialized[0m
+15:42:00 [32minfo[39m=MongoDB connected
+16:06:08 [32minfo[39m=[32mChatService initialized[0m
+16:06:09 [32minfo[39m=MongoDB connected
+16:06:22 [32minfo[39m=Message received: /cldb from userId: 7294983292
+16:06:22 [32minfo[39m=Logged message 25874 from user in chat 7294983292
+16:06:22 [32minfo[39m=Database cleared
+16:06:22 [32minfo[39m=[34mReceived /start command from chatId=7502917471[0m
+16:06:22 [32minfo[39m=[32mUser not found for chatId=7502917471. Creating new user entry.[0m
+16:06:22 [31merror[39m=Error clearing database:
+16:06:28 [32minfo[39m=Message received: /cldb from userId: 7294983292
+16:06:28 [32minfo[39m=Logged message 25877 from user in chat 7294983292
+16:06:28 [32minfo[39m=Database cleared
+16:06:40 [32minfo[39m=Message received: /start from userId: 7294983292
+16:06:40 [32minfo[39m=Received /start command from chatId: 7294983292 {"message_id":25879,"from":{"id":7294983292,"is_bot":false,"first_name":"Anna","last_name":"May","username":"annamayye","language_code":"en"},"chat":{"id":7294983292,"first_name":"Anna","last_name":"May","username":"annamayye","type":"private"},"date":1725912399,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+16:06:40 [31merror[39m=Error checking and showing Start button for chatId 7294983292:
+16:06:40 [32minfo[39m=[34mReceived /start command from chatId=7294983292[0m
+16:06:40 [32minfo[39m=Logged message 25879 from user in chat 7294983292
+16:06:40 [32minfo[39m=[32mUser not found for chatId=7294983292. Creating new user entry.[0m
+16:06:41 [32minfo[39m=[32mNew user created with chatId=7294983292[0m
+16:06:41 [32minfo[39m=[34mStarting handleStart for chatId=7294983292[0m
+16:07:58 [32minfo[39m=[32mChatService initialized[0m
+16:07:58 [32minfo[39m=MongoDB connected
+16:08:04 [32minfo[39m=Message received: /start from userId: 7294983292
+16:08:04 [32minfo[39m=Received /start command from chatId: 7294983292 {"message_id":25882,"from":{"id":7294983292,"is_bot":false,"first_name":"Anna","last_name":"May","username":"annamayye","language_code":"en"},"chat":{"id":7294983292,"first_name":"Anna","last_name":"May","username":"annamayye","type":"private"},"date":1725912484,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+16:08:04 [31merror[39m=Error checking and showing Start button for chatId 7294983292:
+16:08:04 [32minfo[39m=[34mReceived /start command from chatId=7294983292[0m
+16:08:05 [32minfo[39m=[32mUser found for chatId=7294983292[0m
+16:08:05 [32minfo[39m=[34mStarting handleStart for chatId=7294983292[0m
+16:08:06 [32minfo[39m=[32mDeleted initial message with id=25882 for chatId=7294983292[0m
+16:08:07 [32minfo[39m=[32mDeleted 'Please wait...' message with id=25883 for chatId=7294983292[0m
+16:17:10 [32minfo[39m=[32mChatService initialized[0m
+16:17:10 [32minfo[39m=MongoDB connected
+16:17:19 [32minfo[39m=Callback query received: lang_en from userId: 7294983292
+16:17:19 [32minfo[39m=[34mLanguage selection initiated for chatId=7294983292, language=en[0m
+16:17:19 [32minfo[39m=[32mLanguage set to en for userId=7294983292[0m
+16:17:20 [32minfo[39m=[34mCalling handleRegionSelection for chatId=7294983292[0m
+16:17:20 [32minfo[39m=[34mRegion selection initiated for chatId=7294983292, language=en[0m
+16:17:20 [32minfo[39m=[34mRegion selection options sent for chatId=7294983292[0m
+16:17:20 [32minfo[39m=Language selected: en for userId: 7294983292
+16:17:22 [32minfo[39m=Callback query received: region_us from userId: 7294983292
+16:17:22 [32minfo[39m=[34mRegion change initiated for chatId=7294983292, region=us[0m
+16:17:22 [32minfo[39m=[34mSetting region=us, dialect=en-us for userId=7294983292[0m
+16:17:22 [32minfo[39m=[32mRegion set to us for userId=7294983292[0m
+16:17:22 [32minfo[39m=[34mDialect selection initiated for region=en-us[0m
+16:17:22 [32minfo[39m=[33mDialects found: 0 for region=en-us[0m
+16:17:22 [32minfo[39m=[31mNo dialects found, moving to main menu[0m
+16:17:22 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+16:17:22 [32minfo[39m=Region selected: us for userId: 7294983292
+16:17:32 [32minfo[39m=Callback query received: create_chat from userId: 7294983292
+16:17:32 [32minfo[39m=Create chat initiated by userId: 7294983292
+16:17:32 [32minfo[39m=Creating chat with connection code: 52949 for chatId: 7294983292
+16:17:35 [32minfo[39m=Callback query received: join_chat from userId: 7294983292
+16:17:35 [32minfo[39m=Join chat initiated by userId: 7294983292
+16:17:35 [32minfo[39m=Join chat initiated by userId: 7294983292
+16:17:38 [32minfo[39m=Message received: 52949 from userId: 7294983292
+16:17:38 [32minfo[39m=Received connection code: 52949 for userId: 7294983292
+16:17:38 [32minfo[39m=User to connect found: {"_id":"66df55509711fe7ffd5c8c67","userId":"7294983292","language":"en","connectedChatId":null,"connectionCode":"52949","connectionCodeExpiry":"2024-09-09T20:27:33.011Z","telegramName":"annamayye","dialect":"en-us","location":null,"__v":0}
+16:17:38 [31merror[39m=Error updating user connection data: escapeMarkdown is not defined
+16:20:53 [32minfo[39m=[32mChatService initialized[0m
+16:20:54 [32minfo[39m=MongoDB connected
+16:20:59 [32minfo[39m=Message received: /start from userId: 7294983292
+16:20:59 [32minfo[39m=Received /start command from chatId: 7294983292 {"message_id":25893,"from":{"id":7294983292,"is_bot":false,"first_name":"Anna","last_name":"May","username":"annamayye","language_code":"en"},"chat":{"id":7294983292,"first_name":"Anna","last_name":"May","username":"annamayye","type":"private"},"date":1725913259,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+16:21:00 [31merror[39m=Error checking and showing Start button for chatId 7294983292:
+16:21:00 [32minfo[39m=[34mReceived /start command from chatId=7294983292[0m
+16:21:00 [32minfo[39m=[32mUser found for chatId=7294983292[0m
+16:21:00 [32minfo[39m=[33mUser is currently in a chat with connectedChatId=7294983292[0m
+16:21:00 [32minfo[39m=[32mNew conversation created between users 66df55509711fe7ffd5c8c67 and 66df55509711fe7ffd5c8c67[0m
+16:21:01 [32minfo[39m=Saving message for conversationId: 66df58ac63502a02b2320e44, senderId: 66df55509711fe7ffd5c8c67
+16:21:01 [32minfo[39m=Message saved successfully {"messageId":"66df58ad63502a02b2320e47"}
+16:21:12 [32minfo[39m=Message received: /start from userId: 7294983292
+16:21:12 [32minfo[39m=Received /start command from chatId: 7294983292 {"message_id":25896,"from":{"id":7294983292,"is_bot":false,"first_name":"Anna","last_name":"May","username":"annamayye","language_code":"en"},"chat":{"id":7294983292,"first_name":"Anna","last_name":"May","username":"annamayye","type":"private"},"date":1725913271,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+16:21:12 [31merror[39m=Error checking and showing Start button for chatId 7294983292:
+16:21:12 [32minfo[39m=[34mReceived /start command from chatId=7294983292[0m
+16:21:12 [32minfo[39m=[32mUser found for chatId=7294983292[0m
+16:21:12 [32minfo[39m=[33mUser is currently in a chat with connectedChatId=7294983292[0m
+16:21:12 [32minfo[39m=[34mConversation updated between users 66df55509711fe7ffd5c8c67 and 66df55509711fe7ffd5c8c67[0m
+16:21:14 [32minfo[39m=Saving message for conversationId: 66df58ac63502a02b2320e44, senderId: 66df55509711fe7ffd5c8c67
+16:21:14 [32minfo[39m=Message saved successfully {"messageId":"66df58ba63502a02b2320e52"}
+16:21:19 [32minfo[39m=Message received: /kill from userId: 7294983292
+16:21:19 [32minfo[39m=Received /kill command {"message_id":25899,"from":{"id":7294983292,"is_bot":false,"first_name":"Anna","last_name":"May","username":"annamayye","language_code":"en"},"chat":{"id":7294983292,"first_name":"Anna","last_name":"May","username":"annamayye","type":"private"},"date":1725913278,"text":"/kill","entities":[{"offset":0,"length":5,"type":"bot_command"}]}
+16:21:19 [32minfo[39m=[34mConversation updated between users 66df55509711fe7ffd5c8c67 and 66df55509711fe7ffd5c8c67[0m
+16:21:19 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+16:21:20 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+16:21:20 [32minfo[39m=Chat forcibly ended by userId: 7294983292
+16:21:21 [32minfo[39m=Saving message for conversationId: 66df58ac63502a02b2320e44, senderId: 66df55509711fe7ffd5c8c67
+16:21:21 [32minfo[39m=Message saved successfully {"messageId":"66df58c163502a02b2320e61"}
+16:21:26 [32minfo[39m=Message received: d from userId: 7294983292
+16:21:33 [32minfo[39m=Message received: /start from userId: 7294983292
+16:21:33 [32minfo[39m=Received /start command from chatId: 7294983292 {"message_id":25907,"from":{"id":7294983292,"is_bot":false,"first_name":"Anna","last_name":"May","username":"annamayye","language_code":"en"},"chat":{"id":7294983292,"first_name":"Anna","last_name":"May","username":"annamayye","type":"private"},"date":1725913292,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+16:21:33 [31merror[39m=Error checking and showing Start button for chatId 7294983292:
+16:21:33 [32minfo[39m=[34mReceived /start command from chatId=7294983292[0m
+16:21:33 [32minfo[39m=[32mUser found for chatId=7294983292[0m
+16:21:33 [32minfo[39m=[34mStarting handleStart for chatId=7294983292[0m
+16:21:34 [32minfo[39m=[32mDeleted initial message with id=25907 for chatId=7294983292[0m
+16:21:35 [32minfo[39m=[32mDeleted 'Please wait...' message with id=25908 for chatId=7294983292[0m
+16:21:38 [32minfo[39m=Callback query received: lang_de from userId: 7294983292
+16:21:38 [32minfo[39m=[34mLanguage selection initiated for chatId=7294983292, language=de[0m
+16:21:38 [32minfo[39m=[32mLanguage set to de for userId=7294983292[0m
+16:21:38 [32minfo[39m=[34mCalling handleRegionSelection for chatId=7294983292[0m
+16:21:38 [32minfo[39m=[34mRegion selection initiated for chatId=7294983292, language=de[0m
+16:21:39 [32minfo[39m=[34mRegion selection options sent for chatId=7294983292[0m
+16:21:39 [32minfo[39m=Language selected: de for userId: 7294983292
+16:21:40 [32minfo[39m=Callback query received: region_germany from userId: 7294983292
+16:21:40 [32minfo[39m=[34mRegion change initiated for chatId=7294983292, region=germany[0m
+16:21:40 [32minfo[39m=[34mSetting region=germany, dialect=de-germany for userId=7294983292[0m
+16:21:40 [32minfo[39m=[32mRegion set to germany for userId=7294983292[0m
+16:21:40 [32minfo[39m=[34mDialect selection initiated for region=de-germany[0m
+16:21:40 [32minfo[39m=[33mDialects found: 0 for region=de-germany[0m
+16:21:40 [32minfo[39m=[31mNo dialects found, moving to main menu[0m
+16:21:40 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+16:21:41 [32minfo[39m=Region selected: germany for userId: 7294983292
+16:52:01 [32minfo[39m=[32mChatService initialized[0m
+16:52:02 [32minfo[39m=MongoDB connected
+16:52:07 [32minfo[39m=Message received: /cldb from userId: 7294983292
+16:52:07 [32minfo[39m=Database cleared
+16:52:07 [32minfo[39m=[34mReceived /start command from chatId=7294983292[0m
+16:52:07 [32minfo[39m=[32mUser not found for chatId=7294983292. Creating new user entry.[0m
+16:52:07 [31merror[39m=Error clearing database:
+16:52:09 [32minfo[39m=Message received: /cldb from userId: 7294983292
+16:52:09 [32minfo[39m=Database cleared
+16:52:10 [32minfo[39m=Message received: /start from userId: 7294983292
+16:52:10 [32minfo[39m=Received /start command from chatId: 7294983292 {"message_id":25918,"from":{"id":7294983292,"is_bot":false,"first_name":"Anna","last_name":"May","username":"annamayye","language_code":"en"},"chat":{"id":7294983292,"first_name":"Anna","last_name":"May","username":"annamayye","type":"private"},"date":1725915129,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+16:52:10 [31merror[39m=Error checking and showing Start button for chatId 7294983292:
+16:52:10 [32minfo[39m=[34mReceived /start command from chatId=7294983292[0m
+16:52:10 [32minfo[39m=[32mUser not found for chatId=7294983292. Creating new user entry.[0m
+16:52:10 [32minfo[39m=[32mNew user created with chatId=7294983292[0m
+16:52:10 [32minfo[39m=[34mStarting handleStart for chatId=7294983292[0m
+16:52:11 [32minfo[39m=[32mDeleted initial message with id=25918 for chatId=7294983292[0m
+16:52:13 [32minfo[39m=[32mDeleted 'Please wait...' message with id=25919 for chatId=7294983292[0m
+16:52:16 [32minfo[39m=Callback query received: lang_en from userId: 7294983292
+16:52:16 [32minfo[39m=[34mLanguage selection initiated for chatId=7294983292, language=en[0m
+16:52:16 [32minfo[39m=[32mLanguage set to en for userId=7294983292[0m
+16:52:17 [32minfo[39m=[34mCalling handleRegionSelection for chatId=7294983292[0m
+16:52:17 [32minfo[39m=[34mRegion selection initiated for chatId=7294983292, language=en[0m
+16:52:17 [32minfo[39m=[34mRegion selection options sent for chatId=7294983292[0m
+16:52:17 [32minfo[39m=Language selected: en for userId: 7294983292
+16:52:19 [32minfo[39m=Callback query received: region_us from userId: 7294983292
+16:52:19 [32minfo[39m=[34mRegion change initiated for chatId=7294983292, region=us[0m
+16:52:19 [32minfo[39m=[34mSetting region=us, dialect=en-us for userId=7294983292[0m
+16:52:19 [32minfo[39m=[32mRegion set to us for userId=7294983292[0m
+16:52:19 [32minfo[39m=[34mDialect selection initiated for region=en-us[0m
+16:52:19 [32minfo[39m=[33mDialects found: 0 for region=en-us[0m
+16:52:19 [32minfo[39m=[31mNo dialects found, moving to main menu[0m
+16:52:19 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+16:52:19 [32minfo[39m=Region selected: us for userId: 7294983292
+17:27:35 [32minfo[39m=[32mChatService initialized[0m
+17:27:36 [32minfo[39m=Message received: /start from userId: 6312476121
+17:27:36 [32minfo[39m=Received /start command from chatId: 6312476121 {"message_id":25924,"from":{"id":6312476121,"is_bot":false,"first_name":"steve","username":"silenzito","language_code":"en"},"chat":{"id":6312476121,"first_name":"steve","username":"silenzito","type":"private"},"date":1725917210,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+17:27:36 [31merror[39m=Error checking and showing Start button for chatId 6312476121:
+17:27:36 [32minfo[39m=[34mReceived /start command from chatId=6312476121[0m
+17:27:36 [32minfo[39m=MongoDB connected
+17:27:36 [32minfo[39m=[32mUser not found for chatId=6312476121. Creating new user entry.[0m
+17:27:36 [32minfo[39m=[32mNew user created with chatId=6312476121[0m
+17:27:36 [32minfo[39m=[34mStarting handleStart for chatId=6312476121[0m
+17:27:36 [32minfo[39m=Logged message 25924 from user in chat 6312476121
+17:27:37 [32minfo[39m=Logged message 25925 from bot in chat 6312476121
+17:27:38 [32minfo[39m=[32mDeleted initial message with id=25924 for chatId=6312476121[0m
+17:27:38 [31merror[39m=Error logging message:
+17:27:38 [32minfo[39m=Logged message 25925 from bot in chat 6312476121
+17:27:39 [32minfo[39m=[32mDeleted 'Please wait...' message with id=25925 for chatId=6312476121[0m
+17:27:52 [32minfo[39m=Message received: /cldb from userId: 7294983292
+17:27:52 [32minfo[39m=Logged message 25928 from user in chat 7294983292
+17:27:52 [32minfo[39m=Database cleared
+17:27:52 [32minfo[39m=[34mReceived /start command from chatId=7294983292[0m
+17:27:53 [32minfo[39m=[32mUser not found for chatId=7294983292. Creating new user entry.[0m
+17:27:53 [31merror[39m=Error clearing database:
+17:27:53 [32minfo[39m=Callback query received: lang_fa from userId: 6312476121
+17:27:53 [32minfo[39m=[34mLanguage selection initiated for chatId=6312476121, language=fa[0m
+17:27:53 [32minfo[39m=[32mLanguage set to fa for userId=6312476121[0m
+17:27:54 [32minfo[39m=[34mCalling handleRegionSelection for chatId=6312476121[0m
+17:27:54 [32minfo[39m=[34mRegion selection initiated for chatId=6312476121, language=fa[0m
+17:27:54 [32minfo[39m=[34mRegion selection options sent for chatId=6312476121[0m
+17:27:54 [32minfo[39m=Language selected: fa for userId: 6312476121
+17:27:54 [32minfo[39m=Message received: /cldb from userId: 7294983292
+17:27:54 [32minfo[39m=Logged message 25932 from user in chat 7294983292
+17:27:55 [32minfo[39m=Database cleared
+17:27:55 [32minfo[39m=[34mReceived /start command from chatId=6312476121[0m
+17:27:55 [32minfo[39m=[32mUser not found for chatId=6312476121. Creating new user entry.[0m
+17:27:55 [31merror[39m=Error clearing database:
+17:27:56 [32minfo[39m=Message received: /start from userId: 7294983292
+17:27:56 [32minfo[39m=Received /start command from chatId: 7294983292 {"message_id":25935,"from":{"id":7294983292,"is_bot":false,"first_name":"Anna","last_name":"May","username":"annamayye","language_code":"en"},"chat":{"id":7294983292,"first_name":"Anna","last_name":"May","username":"annamayye","type":"private"},"date":1725917275,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+17:27:56 [31merror[39m=Error checking and showing Start button for chatId 7294983292:
+17:27:56 [32minfo[39m=[34mReceived /start command from chatId=7294983292[0m
+17:27:56 [32minfo[39m=Logged message 25935 from user in chat 7294983292
+17:27:56 [32minfo[39m=[32mUser not found for chatId=7294983292. Creating new user entry.[0m
+17:27:56 [32minfo[39m=[32mNew user created with chatId=7294983292[0m
+17:27:56 [32minfo[39m=[34mStarting handleStart for chatId=7294983292[0m
+17:27:56 [32minfo[39m=Logged message 25937 from bot in chat 7294983292
+17:27:57 [32minfo[39m=[32mDeleted initial message with id=25935 for chatId=7294983292[0m
+17:27:57 [31merror[39m=Error logging message:
+17:27:57 [32minfo[39m=Logged message 25937 from bot in chat 7294983292
+17:27:58 [32minfo[39m=Callback query received: region_iran from userId: 6312476121
+17:27:58 [32minfo[39m=[34mRegion change initiated for chatId=6312476121, region=iran[0m
+17:27:58 [31merror[39m=[31mError setting region for userId=6312476121[0m:
+17:27:58 [32minfo[39m=[32mDeleted 'Please wait...' message with id=25937 for chatId=7294983292[0m
+17:27:59 [31merror[39m=Error handling callback query data: region_iran for userId 6312476121: sendInitialMenu is not defined
+17:28:01 [32minfo[39m=Callback query received: lang_en from userId: 7294983292
+17:28:01 [32minfo[39m=[34mLanguage selection initiated for chatId=7294983292, language=en[0m
+17:28:02 [32minfo[39m=[32mLanguage set to en for userId=7294983292[0m
+17:28:02 [32minfo[39m=[34mCalling handleRegionSelection for chatId=7294983292[0m
+17:28:02 [32minfo[39m=[34mRegion selection initiated for chatId=7294983292, language=en[0m
+17:28:02 [32minfo[39m=[34mRegion selection options sent for chatId=7294983292[0m
+17:28:02 [32minfo[39m=Language selected: en for userId: 7294983292
+17:28:04 [32minfo[39m=Callback query received: region_australia from userId: 7294983292
+17:28:04 [32minfo[39m=[34mRegion change initiated for chatId=7294983292, region=australia[0m
+17:28:04 [32minfo[39m=[34mSetting region=australia, dialect=en-australia for userId=7294983292[0m
+17:28:04 [32minfo[39m=[32mRegion set to australia for userId=7294983292[0m
+17:28:04 [32minfo[39m=[34mDialect selection initiated for region=en-australia[0m
+17:28:04 [32minfo[39m=[33mDialects found: 0 for region=en-australia[0m
+17:28:04 [32minfo[39m=[31mNo dialects found, moving to main menu[0m
+17:28:04 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+17:28:04 [32minfo[39m=Region selected: australia for userId: 7294983292
