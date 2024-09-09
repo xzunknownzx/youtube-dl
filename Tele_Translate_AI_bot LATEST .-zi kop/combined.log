@@ -1,0 +1,96 @@
+15:04:29 [32minfo[39m=MongoDB connected
+15:04:33 [32minfo[39m=Callback query received: region_us from userId: 7502917471
+15:04:33 [32minfo[39m=[34mRegion change initiated for chatId=7502917471, region=us[0m
+15:04:33 [32minfo[39m=[34mSetting region=us, dialect=en-us for userId=7502917471[0m
+15:04:34 [32minfo[39m=[32mRegion set to us for userId=7502917471[0m
+15:04:34 [32minfo[39m=[34mDialect selection initiated for region=en-us[0m
+15:04:34 [31merror[39m=[31mError setting region for userId=7502917471[0m:
+15:04:35 [32minfo[39m=Region selected: us for userId: 7502917471
+15:04:58 [32minfo[39m=Callback query received: create_chat from userId: 7502917471
+15:04:58 [32minfo[39m=Create chat initiated by userId: 7502917471
+15:04:58 [32minfo[39m=Creating chat with connection code: 54186 for chatId: 7502917471
+15:05:23 [32minfo[39m=Message received: /start from userId: 7294983292
+15:05:23 [32minfo[39m=Received /start command from chatId: 7294983292 {"message_id":25836,"from":{"id":7294983292,"is_bot":false,"first_name":"Anna","last_name":"May","username":"annamayye","language_code":"en"},"chat":{"id":7294983292,"first_name":"Anna","last_name":"May","username":"annamayye","type":"private"},"date":1725908723,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+15:05:23 [31merror[39m=Error checking and showing Start button for chatId 7294983292:
+15:05:23 [32minfo[39m=[34mReceived /start command from chatId=7294983292[0m
+15:05:23 [32minfo[39m=Logged message 25836 from user in chat 7294983292
+15:05:23 [32minfo[39m=[32mUser not found for chatId=7294983292. Creating new user entry.[0m
+15:05:24 [32minfo[39m=[32mNew user created with chatId=7294983292[0m
+15:05:24 [32minfo[39m=[34mStarting handleStart for chatId=7294983292[0m
+15:05:24 [32minfo[39m=Logged message 25838 from bot in chat 7294983292
+15:05:25 [32minfo[39m=[32mDeleted initial message with id=25836 for chatId=7294983292[0m
+15:05:25 [31merror[39m=Error logging message:
+15:05:25 [32minfo[39m=Logged message 25838 from bot in chat 7294983292
+15:05:26 [32minfo[39m=[32mDeleted 'Please wait...' message with id=25838 for chatId=7294983292[0m
+15:05:29 [32minfo[39m=Callback query received: lang_uk from userId: 7294983292
+15:05:29 [32minfo[39m=[34mLanguage selection initiated for chatId=7294983292, language=uk[0m
+15:05:29 [32minfo[39m=[32mLanguage set to uk for userId=7294983292[0m
+15:05:30 [32minfo[39m=[34mCalling handleRegionSelection for chatId=7294983292[0m
+15:05:30 [32minfo[39m=[34mRegion selection initiated for chatId=7294983292, language=uk[0m
+15:05:30 [32minfo[39m=[34mRegion selection options sent for chatId=7294983292[0m
+15:05:30 [32minfo[39m=Language selected: uk for userId: 7294983292
+15:05:31 [32minfo[39m=Callback query received: region_chernihiv from userId: 7294983292
+15:05:31 [32minfo[39m=[34mRegion change initiated for chatId=7294983292, region=chernihiv[0m
+15:05:32 [32minfo[39m=[34mSetting region=chernihiv, dialect=uk-chernihiv for userId=7294983292[0m
+15:05:32 [32minfo[39m=[32mRegion set to chernihiv for userId=7294983292[0m
+15:05:32 [32minfo[39m=[34mDialect selection initiated for region=uk-chernihiv[0m
+15:05:32 [31merror[39m=[31mError setting region for userId=7294983292[0m:
+15:05:32 [32minfo[39m=Region selected: chernihiv for userId: 7294983292
+15:05:45 [32minfo[39m=Callback query received: join_chat from userId: 7294983292
+15:05:45 [32minfo[39m=Join chat initiated by userId: 7294983292
+15:05:45 [32minfo[39m=Join chat initiated by userId: 7294983292
+15:05:48 [32minfo[39m=Message received: 54186 from userId: 7294983292
+15:05:48 [32minfo[39m=Received connection code: 54186 for userId: 7294983292
+15:05:48 [32minfo[39m=Logged message 25844 from user in chat 7294983292
+15:05:48 [32minfo[39m=User to connect found: {"_id":"66df4014106829ebea0f2766","userId":"7502917471","language":"en","connectedChatId":null,"connectionCode":"54186","connectionCodeExpiry":"2024-09-09T19:14:58.972Z","telegramName":"Hi_ImKate","dialect":"en-us","location":null,"__v":0}
+15:05:49 [32minfo[39m=Users connected: 7294983292 and 7502917471
+15:05:56 [32minfo[39m=Message received: hi from userId: 7502917471
+15:05:56 [32minfo[39m=Logged message 25848 from user in chat 7502917471
+15:05:58 [32minfo[39m=Saving message for conversationId: 66df4714d3357df5f6a6d058, senderId: 66df4014106829ebea0f2766
+15:05:58 [32minfo[39m=Message saved successfully {"messageId":"66df4716d3357df5f6a6d05b"}
+15:06:03 [32minfo[39m=Message received: what is up from userId: 7294983292
+15:06:03 [32minfo[39m=Logged message 25850 from user in chat 7294983292
+15:06:04 [32minfo[39m=Saving message for conversationId: 66df4714d3357df5f6a6d058, senderId: 66df46f3d3357df5f6a6d03d
+15:06:04 [32minfo[39m=Message saved successfully {"messageId":"66df471cd3357df5f6a6d065"}
+15:06:08 [32minfo[39m=Callback query received: see_original_66df471cd3357df5f6a6d065 from userId: 7502917471
+15:06:08 [32minfo[39m=See original requested for messageId: 66df471cd3357df5f6a6d065
+15:06:08 [32minfo[39m=Original text retrieved for messageId 66df471cd3357df5f6a6d065: what is up
+15:06:10 [32minfo[39m=Callback query received: original_user_language_66df471cd3357df5f6a6d065 from userId: 7502917471
+15:06:10 [32minfo[39m=Original user language requested for messageId: 66df471cd3357df5f6a6d065
+15:06:12 [32minfo[39m=Callback query received: return_enhanced_66df471cd3357df5f6a6d065 from userId: 7502917471
+15:06:12 [32minfo[39m=Return to enhanced text requested for messageId: 66df471cd3357df5f6a6d065
+15:06:13 [32minfo[39m=Callback query received: see_original_66df471cd3357df5f6a6d065 from userId: 7502917471
+15:06:13 [32minfo[39m=See original requested for messageId: 66df471cd3357df5f6a6d065
+15:06:13 [32minfo[39m=Original text retrieved for messageId 66df471cd3357df5f6a6d065: what is up
+15:06:14 [32minfo[39m=Callback query received: original_sender_language_66df471cd3357df5f6a6d065 from userId: 7502917471
+15:06:14 [32minfo[39m=Original sender language requested for messageId: 66df471cd3357df5f6a6d065
+15:06:15 [32minfo[39m=Callback query received: return_enhanced_66df471cd3357df5f6a6d065 from userId: 7502917471
+15:06:15 [32minfo[39m=Return to enhanced text requested for messageId: 66df471cd3357df5f6a6d065
+15:06:19 [32minfo[39m=Callback query received: settings from userId: 7502917471
+15:06:22 [32minfo[39m=Callback query received: change_language from userId: 7502917471
+15:06:22 [32minfo[39m=[34mReceived /start command from chatId=7502917471[0m
+15:06:22 [32minfo[39m=[32mUser found for chatId=7502917471[0m
+15:06:22 [32minfo[39m=[33mUser is currently in a chat with connectedChatId=7294983292[0m
+15:06:24 [32minfo[39m=Callback query received: main_menu from userId: 7502917471
+15:06:28 [32minfo[39m=Callback query received: settings from userId: 7502917471
+15:06:29 [32minfo[39m=Callback query received: change_language from userId: 7502917471
+15:06:29 [32minfo[39m=[34mReceived /start command from chatId=7502917471[0m
+15:06:29 [32minfo[39m=[32mUser found for chatId=7502917471[0m
+15:06:29 [32minfo[39m=[33mUser is currently in a chat with connectedChatId=7294983292[0m
+15:06:31 [32minfo[39m=Callback query received: end_chat from userId: 7502917471
+15:06:31 [32minfo[39m=End chat initiated by userId: 7502917471
+15:06:33 [32minfo[39m=Chat ended between users: 7502917471 and 7294983292
+15:06:40 [32minfo[39m=Callback query received: see_original_66df4716d3357df5f6a6d05b from userId: 7294983292
+15:06:40 [32minfo[39m=See original requested for messageId: 66df4716d3357df5f6a6d05b
+15:06:40 [32minfo[39m=Original text retrieved for messageId 66df4716d3357df5f6a6d05b: hi
+15:06:41 [32minfo[39m=Callback query received: original_user_language_66df4716d3357df5f6a6d05b from userId: 7294983292
+15:06:41 [32minfo[39m=Original user language requested for messageId: 66df4716d3357df5f6a6d05b
+15:06:43 [32minfo[39m=Callback query received: return_enhanced_66df4716d3357df5f6a6d05b from userId: 7294983292
+15:06:43 [32minfo[39m=Return to enhanced text requested for messageId: 66df4716d3357df5f6a6d05b
+15:06:45 [32minfo[39m=Callback query received: region_ivano-frankivsk from userId: 7294983292
+15:06:45 [32minfo[39m=[34mRegion change initiated for chatId=7294983292, region=ivano-frankivsk[0m
+15:06:45 [32minfo[39m=[34mSetting region=ivano-frankivsk, dialect=uk-ivano-frankivsk for userId=7294983292[0m
+15:06:45 [32minfo[39m=[32mRegion set to ivano-frankivsk for userId=7294983292[0m
+15:06:45 [32minfo[39m=[34mDialect selection initiated for region=uk-ivano-frankivsk[0m
+15:06:45 [31merror[39m=[31mError setting region for userId=7294983292[0m:
+15:06:46 [32minfo[39m=Region selected: ivano-frankivsk for userId: 7294983292
