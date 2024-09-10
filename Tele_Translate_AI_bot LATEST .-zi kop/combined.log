@@ -8113,3 +8113,222 @@
 02:01:27 [32minfo[39m=Create chat cancelled for userId: 7294983292
 02:01:29 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: cancel_join_chat from userId: 7294983292
 02:01:31 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+02:09:13 [32minfo[39m=[32mChatService initialized[0m
+02:09:13 [32minfo[39m=MongoDB connected
+02:09:15 [32minfo[39m=[telegramBot.js:on('message')] Message received: /start from userId: 7294983292
+02:09:15 [32minfo[39m=[telegramBot.js:onText(/\/start/)] Received /start command from chatId: 7294983292 {"message_id":27017,"from":{"id":7294983292,"is_bot":false,"first_name":"Anna","last_name":"May","username":"annamayye","language_code":"en"},"chat":{"id":7294983292,"first_name":"Anna","last_name":"May","username":"annamayye","type":"private"},"date":1725948554,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+02:09:15 [32minfo[39m=[startHandler.js:handleStart] [34mReceived /start command from chatId=7294983292[0m
+02:09:15 [32minfo[39m=Logged message 27017 from user in chat 7294983292
+02:09:15 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27018 from bot in chat 7294983292
+02:09:16 [32minfo[39m=[startHandler.js:handleStart] [34mStarting language selection for chatId=7294983292[0m
+02:09:17 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27019 from bot in chat 7294983292
+02:09:18 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: lang_en from userId: 7294983292
+02:09:18 [32minfo[39m=[34mLanguage selection initiated for chatId=7294983292, language=en[0m
+02:09:19 [32minfo[39m=[32mLanguage set to en for userId=7294983292[0m
+02:09:20 [32minfo[39m=[34mCalling handleRegionSelection for chatId=7294983292[0m
+02:09:20 [32minfo[39m=[34mRegion selection initiated for chatId=7294983292, language=en[0m
+02:09:20 [32minfo[39m=[34mRegion selection options sent for chatId=7294983292[0m
+02:09:20 [32minfo[39m=Language selected: en for userId: 7294983292
+02:09:27 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: region_us from userId: 7294983292
+02:09:27 [32minfo[39m=[34mRegion change initiated for chatId=7294983292, region=us[0m
+02:09:27 [32minfo[39m=[34mSetting region=us, dialect=en-US for userId=7294983292[0m
+02:09:27 [32minfo[39m=[32mRegion set to us for userId=7294983292[0m
+02:09:27 [32minfo[39m=[34mDialect selection initiated for region=en-US[0m
+02:09:27 [32minfo[39m=[33mDialects found: 10 for region=en-US[0m
+02:09:27 [32minfo[39m=[32mDialect options sent to user[0m
+02:09:27 [32minfo[39m=Region selected: us for userId: 7294983292
+02:09:28 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: dialect_general_american from userId: 7294983292
+02:09:28 [32minfo[39m=[34mDialect change initiated for chatId=7294983292, dialect=general[0m
+02:09:29 [32minfo[39m=[32mDialect set to general for userId=7294983292[0m
+02:09:29 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+02:09:29 [32minfo[39m=Dialect selected: general for userId: 7294983292
+02:09:31 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: settings from userId: 7294983292
+02:09:32 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: settings_go_back from userId: 7294983292
+02:09:33 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+02:09:34 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: create_chat from userId: 7294983292
+02:09:34 [32minfo[39m=Create chat initiated by userId: 7294983292
+02:09:34 [32minfo[39m=Creating chat with connection code: 45398 for chatId: 7294983292
+02:09:38 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: join_chat from userId: 7294983292
+02:09:39 [32minfo[39m=Join chat initiated by userId: 7294983292
+02:09:39 [32minfo[39m=Join chat initiated by userId: 7294983292
+02:09:39 [32minfo[39m=Deleted menu message for userId: 7294983292
+02:09:39 [33mwarn[39m=Setup message with id 27018 not found for chatId 7294983292. It might have already been deleted.
+02:09:39 [32minfo[39m=Finished deletion of setup messages in chatId: 7294983292
+02:09:40 [32minfo[39m=Logged message 27027 from bot in chat 7294983292
+02:09:44 [32minfo[39m=[telegramBot.js:on('message')] Message received: 45398 from userId: 7294983292
+02:09:44 [32minfo[39m=Received connection code: 45398 for userId: 7294983292
+02:09:44 [32minfo[39m=Logged message 27028 from user in chat 7294983292
+02:09:45 [32minfo[39m=Deleted message with id: 26976
+02:09:45 [32minfo[39m=Deleted message with id: 26977
+02:09:45 [33mwarn[39m=Message with id 27012 not found for chatId 7294983292. It might have already been deleted.
+02:09:45 [33mwarn[39m=Message with id 26987 not found for chatId 7294983292. It might have already been deleted.
+02:09:45 [33mwarn[39m=Message with id 26996 not found for chatId 7294983292. It might have already been deleted.
+02:09:45 [33mwarn[39m=Message with id 27005 not found for chatId 7294983292. It might have already been deleted.
+02:09:45 [33mwarn[39m=Message with id 27019 not found for chatId 7294983292. It might have already been deleted.
+02:09:45 [33mwarn[39m=Message with id 27028 not found for chatId 7294983292. It might have already been deleted.
+02:09:45 [32minfo[39m=Deleted message with id: 26989
+02:09:45 [32minfo[39m=Deleted message with id: 26978
+02:09:45 [32minfo[39m=Deleted message with id: 26980
+02:09:45 [32minfo[39m=Deleted message with id: 26991
+02:09:45 [32minfo[39m=Deleted message with id: 27017
+02:09:45 [32minfo[39m=Deleted message with id: 27027
+02:09:45 [32minfo[39m=Finished deletion of logged messages in chatId: 7294983292
+02:09:45 [32minfo[39m=Finished deletion of logged messages in chatId: 7294983292
+02:09:46 [32minfo[39m=Logged message 27029 from bot in chat 7294983292
+02:09:46 [32minfo[39m=Logged message 27030 from bot in chat 7294983292
+02:09:46 [32minfo[39m=Users connected: 7294983292 and 7294983292
+02:09:49 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: end_chat from userId: 7294983292
+02:09:49 [32minfo[39m=End chat initiated by userId: 7294983292
+02:09:50 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+02:09:50 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+02:09:51 [32minfo[39m=Chat ended between users: 7294983292 and 7294983292
+02:09:53 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: settings from userId: 7294983292
+02:09:54 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: settings_change_language from userId: 7294983292
+02:09:54 [32minfo[39m=[startHandler.js:handleStart] [34mReceived /start command from chatId=7294983292[0m
+02:09:55 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27036 from bot in chat 7294983292
+02:09:56 [32minfo[39m=[startHandler.js:handleStart] [34mStarting language selection for chatId=7294983292[0m
+02:09:57 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27037 from bot in chat 7294983292
+02:09:59 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: lang_nl from userId: 7294983292
+02:09:59 [32minfo[39m=[34mLanguage selection initiated for chatId=7294983292, language=nl[0m
+02:10:00 [32minfo[39m=[32mLanguage set to nl for userId=7294983292[0m
+02:10:01 [32minfo[39m=[34mCalling handleRegionSelection for chatId=7294983292[0m
+02:10:01 [32minfo[39m=[34mRegion selection initiated for chatId=7294983292, language=nl[0m
+02:10:02 [32minfo[39m=[34mRegion selection options sent for chatId=7294983292[0m
+02:10:02 [32minfo[39m=Language selected: nl for userId: 7294983292
+02:10:02 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: region_aruba from userId: 7294983292
+02:10:02 [32minfo[39m=[34mRegion change initiated for chatId=7294983292, region=aruba[0m
+02:10:02 [32minfo[39m=[34mSetting region=aruba, dialect=nl-ARUBA for userId=7294983292[0m
+02:10:02 [32minfo[39m=[32mRegion set to aruba for userId=7294983292[0m
+02:10:03 [32minfo[39m=[33mNo specific dialects found for region=aruba. Showing main menu.[0m
+02:10:03 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+02:10:03 [32minfo[39m=Region selected: aruba for userId: 7294983292
+02:12:11 [32minfo[39m=[telegramBot.js:on('message')] Message received: /start from userId: 5347117828
+02:12:11 [32minfo[39m=[telegramBot.js:onText(/\/start/)] Received /start command from chatId: 5347117828 {"message_id":27041,"from":{"id":5347117828,"is_bot":false,"first_name":"𝑴𝒐𝒃𝒊𝒏𝒂","username":"mobinajafarijozani","language_code":"fa"},"chat":{"id":5347117828,"first_name":"𝑴𝒐𝒃𝒊𝒏𝒂","username":"mobinajafarijozani","type":"private"},"date":1725948730,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+02:12:11 [32minfo[39m=[startHandler.js:handleStart] [34mReceived /start command from chatId=5347117828[0m
+02:12:12 [32minfo[39m=Logged message 27041 from user in chat 5347117828
+02:12:12 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27042 from bot in chat 5347117828
+02:12:13 [32minfo[39m=[startHandler.js:handleStart] [34mStarting language selection for chatId=5347117828[0m
+02:12:13 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27043 from bot in chat 5347117828
+02:12:31 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: lang_fa from userId: 5347117828
+02:12:31 [32minfo[39m=[34mLanguage selection initiated for chatId=5347117828, language=fa[0m
+02:12:32 [32minfo[39m=[32mLanguage set to fa for userId=5347117828[0m
+02:12:33 [32minfo[39m=[34mCalling handleRegionSelection for chatId=5347117828[0m
+02:12:33 [32minfo[39m=[34mRegion selection initiated for chatId=5347117828, language=fa[0m
+02:12:34 [32minfo[39m=[34mRegion selection options sent for chatId=5347117828[0m
+02:12:34 [32minfo[39m=Language selected: fa for userId: 5347117828
+02:12:37 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: region_iran from userId: 5347117828
+02:12:37 [32minfo[39m=[34mRegion change initiated for chatId=5347117828, region=iran[0m
+02:12:37 [32minfo[39m=[34mSetting region=iran, dialect=fa-IRAN for userId=5347117828[0m
+02:12:37 [32minfo[39m=[32mRegion set to iran for userId=5347117828[0m
+02:12:37 [32minfo[39m=[33mNo specific dialects found for region=iran. Showing main menu.[0m
+02:12:37 [32minfo[39m=[34mDisplaying initial menu for chatId=5347117828[0m
+02:12:37 [32minfo[39m=Region selected: iran for userId: 5347117828
+02:13:53 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: create_chat from userId: 5347117828
+02:13:53 [32minfo[39m=Create chat initiated by userId: 5347117828
+02:13:53 [32minfo[39m=Creating chat with connection code: 84161 for chatId: 5347117828
+02:14:08 [32minfo[39m=[32mChatService initialized[0m
+02:14:09 [32minfo[39m=MongoDB connected
+02:14:10 [32minfo[39m=[telegramBot.js:on('message')] Message received: /start from userId: 7294983292
+02:14:10 [32minfo[39m=[telegramBot.js:onText(/\/start/)] Received /start command from chatId: 7294983292 {"message_id":27048,"from":{"id":7294983292,"is_bot":false,"first_name":"Anna","last_name":"May","username":"annamayye","language_code":"en"},"chat":{"id":7294983292,"first_name":"Anna","last_name":"May","username":"annamayye","type":"private"},"date":1725948849,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+02:14:10 [32minfo[39m=[startHandler.js:handleStart] [34mReceived /start command from chatId=7294983292[0m
+02:14:10 [32minfo[39m=Logged message 27048 from user in chat 7294983292
+02:14:10 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27049 from bot in chat 7294983292
+02:14:11 [32minfo[39m=[startHandler.js:handleStart] [34mStarting language selection for chatId=7294983292[0m
+02:14:12 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27050 from bot in chat 7294983292
+02:14:14 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: lang_en from userId: 7294983292
+02:14:15 [32minfo[39m=[34mLanguage selection initiated for chatId=7294983292, language=en[0m
+02:14:15 [32minfo[39m=[32mLanguage set to en for userId=7294983292[0m
+02:14:16 [32minfo[39m=[34mCalling handleRegionSelection for chatId=7294983292[0m
+02:14:16 [32minfo[39m=[34mRegion selection initiated for chatId=7294983292, language=en[0m
+02:14:17 [32minfo[39m=[34mRegion selection options sent for chatId=7294983292[0m
+02:14:17 [32minfo[39m=Language selected: en for userId: 7294983292
+02:14:20 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: region_us from userId: 7294983292
+02:14:20 [32minfo[39m=[34mRegion change initiated for chatId=7294983292, region=us[0m
+02:14:20 [32minfo[39m=[34mSetting region=us, dialect=en-US for userId=7294983292[0m
+02:14:20 [32minfo[39m=[32mRegion set to us for userId=7294983292[0m
+02:14:21 [32minfo[39m=[34mDialect selection initiated for region=en-US[0m
+02:14:21 [32minfo[39m=[33mDialects found: 10 for region=en-US[0m
+02:14:21 [32minfo[39m=[32mDialect options sent to user[0m
+02:14:21 [32minfo[39m=Region selected: us for userId: 7294983292
+02:14:27 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: dialect_african_american_vernacular_(aave) from userId: 7294983292
+02:14:27 [32minfo[39m=[34mDialect change initiated for chatId=7294983292, dialect=african[0m
+02:14:27 [32minfo[39m=[32mDialect set to african for userId=7294983292[0m
+02:14:28 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+02:14:28 [32minfo[39m=Dialect selected: african for userId: 7294983292
+02:14:45 [32minfo[39m=[telegramBot.js:on('message')] Message received: /start from userId: 7294983292
+02:14:45 [32minfo[39m=[telegramBot.js:onText(/\/start/)] Received /start command from chatId: 7294983292 {"message_id":27055,"from":{"id":7294983292,"is_bot":false,"first_name":"Anna","last_name":"May","username":"annamayye","language_code":"en"},"chat":{"id":7294983292,"first_name":"Anna","last_name":"May","username":"annamayye","type":"private"},"date":1725948884,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+02:14:45 [32minfo[39m=[startHandler.js:handleStart] [34mReceived /start command from chatId=7294983292[0m
+02:14:45 [32minfo[39m=Logged message 27055 from user in chat 7294983292
+02:14:45 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27056 from bot in chat 7294983292
+02:14:47 [32minfo[39m=[startHandler.js:handleStart] [34mStarting language selection for chatId=7294983292[0m
+02:14:47 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27057 from bot in chat 7294983292
+02:14:48 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: lang_en from userId: 7294983292
+02:14:48 [32minfo[39m=[34mLanguage selection initiated for chatId=7294983292, language=en[0m
+02:14:48 [32minfo[39m=[32mLanguage set to en for userId=7294983292[0m
+02:14:50 [32minfo[39m=[34mCalling handleRegionSelection for chatId=7294983292[0m
+02:14:50 [32minfo[39m=[34mRegion selection initiated for chatId=7294983292, language=en[0m
+02:14:50 [32minfo[39m=[34mRegion selection options sent for chatId=7294983292[0m
+02:14:50 [32minfo[39m=Language selected: en for userId: 7294983292
+02:14:51 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: region_us from userId: 7294983292
+02:14:52 [32minfo[39m=[34mRegion change initiated for chatId=7294983292, region=us[0m
+02:14:52 [32minfo[39m=[34mSetting region=us, dialect=en-US for userId=7294983292[0m
+02:14:52 [32minfo[39m=[32mRegion set to us for userId=7294983292[0m
+02:14:52 [32minfo[39m=[34mDialect selection initiated for region=en-US[0m
+02:14:52 [32minfo[39m=[33mDialects found: 10 for region=en-US[0m
+02:14:52 [32minfo[39m=[32mDialect options sent to user[0m
+02:14:52 [32minfo[39m=Region selected: us for userId: 7294983292
+02:26:20 [32minfo[39m=[telegramBot.js:on('message')] Message received: /start from userId: 5573813015
+02:26:20 [32minfo[39m=[telegramBot.js:onText(/\/start/)] Received /start command from chatId: 5573813015 {"message_id":27061,"from":{"id":5573813015,"is_bot":false,"first_name":"기도","last_name":"💜💜군대","username":"niayesh1392d","language_code":"fa"},"chat":{"id":5573813015,"first_name":"기도","last_name":"💜💜군대","username":"niayesh1392d","type":"private"},"date":1725949579,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+02:26:20 [32minfo[39m=[startHandler.js:handleStart] [34mReceived /start command from chatId=5573813015[0m
+02:26:21 [32minfo[39m=Logged message 27061 from user in chat 5573813015
+02:26:21 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27062 from bot in chat 5573813015
+02:26:22 [32minfo[39m=[startHandler.js:handleStart] [34mStarting language selection for chatId=5573813015[0m
+02:26:22 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27063 from bot in chat 5573813015
+02:26:29 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: lang_fa from userId: 5573813015
+02:26:30 [32minfo[39m=[34mLanguage selection initiated for chatId=5573813015, language=fa[0m
+02:26:30 [32minfo[39m=[32mLanguage set to fa for userId=5573813015[0m
+02:26:31 [32minfo[39m=[34mCalling handleRegionSelection for chatId=5573813015[0m
+02:26:31 [32minfo[39m=[34mRegion selection initiated for chatId=5573813015, language=fa[0m
+02:26:32 [32minfo[39m=[34mRegion selection options sent for chatId=5573813015[0m
+02:26:32 [32minfo[39m=Language selected: fa for userId: 5573813015
+02:26:37 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: region_iran from userId: 5573813015
+02:26:37 [32minfo[39m=[34mRegion change initiated for chatId=5573813015, region=iran[0m
+02:26:37 [32minfo[39m=[34mSetting region=iran, dialect=fa-IRAN for userId=5573813015[0m
+02:26:37 [32minfo[39m=[32mRegion set to iran for userId=5573813015[0m
+02:26:38 [32minfo[39m=[33mNo specific dialects found for region=iran. Showing main menu.[0m
+02:26:38 [32minfo[39m=[34mDisplaying initial menu for chatId=5573813015[0m
+02:26:38 [32minfo[39m=Region selected: iran for userId: 5573813015
+02:26:54 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: ai_chat from userId: 5573813015
+02:26:54 [32minfo[39m=[34mStarting AI Chat for chatId=5573813015[0m
+02:26:58 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: ai_chat_go_back from userId: 5573813015
+02:26:58 [32minfo[39m=[34mEnding AI Chat for chatId=5573813015[0m
+02:26:58 [32minfo[39m=[34mDisplaying initial menu for chatId=5573813015[0m
+02:27:17 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: create_chat from userId: 5573813015
+02:27:17 [32minfo[39m=Create chat initiated by userId: 5573813015
+02:27:17 [32minfo[39m=Creating chat with connection code: 88228 for chatId: 5573813015
+02:27:20 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: ai_chat_go_back from userId: 5573813015
+02:27:20 [32minfo[39m=[34mEnding AI Chat for chatId=5573813015[0m
+02:27:20 [32minfo[39m=[34mDisplaying initial menu for chatId=5573813015[0m
+02:27:26 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: ai_chat_go_back from userId: 5573813015
+02:27:26 [32minfo[39m=[34mEnding AI Chat for chatId=5573813015[0m
+02:27:26 [32minfo[39m=[34mDisplaying initial menu for chatId=5573813015[0m
+02:27:27 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: ai_chat_go_back from userId: 5573813015
+02:27:27 [32minfo[39m=[34mEnding AI Chat for chatId=5573813015[0m
+02:27:27 [32minfo[39m=[34mDisplaying initial menu for chatId=5573813015[0m
+02:27:30 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: cancel_create_chat from userId: 5573813015
+02:27:30 [32minfo[39m=Cancel create chat initiated by userId: 5573813015
+02:27:30 [32minfo[39m=[34mDisplaying initial menu for chatId=5573813015[0m
+02:27:30 [32minfo[39m=Create chat cancelled for userId: 5573813015
+02:27:35 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: ai_chat from userId: 5573813015
+02:27:36 [32minfo[39m=[34mStarting AI Chat for chatId=5573813015[0m
+02:27:37 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: ai_chat from userId: 5573813015
+02:27:37 [32minfo[39m=[34mStarting AI Chat for chatId=5573813015[0m
+02:27:39 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: ai_chat from userId: 5573813015
+02:27:39 [32minfo[39m=[34mStarting AI Chat for chatId=5573813015[0m
+02:27:46 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: ai_chat_go_back from userId: 5573813015
+02:27:46 [32minfo[39m=[34mEnding AI Chat for chatId=5573813015[0m
+02:27:46 [32minfo[39m=[34mDisplaying initial menu for chatId=5573813015[0m
+02:27:50 [32minfo[39m=[telegramBot.js:on('message')] Message received: Dhsus from userId: 5573813015
+02:27:50 [32minfo[39m=Logged message 27078 from user in chat 5573813015
+02:27:56 [32minfo[39m=[telegramBot.js:on('message')] Message received: What from userId: 5573813015
+02:27:56 [32minfo[39m=Logged message 27080 from user in chat 5573813015

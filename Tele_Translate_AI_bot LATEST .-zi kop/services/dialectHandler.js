@@ -4,6 +4,16 @@ const { sendInitialMenu } = require('./menuHandler');
 const { dialects } = require('./languages');
 const colors = require('./colors');
 
+// Helper function to chunk dialect options
+function chunkDialectOptions(options) {
+    const chunks = [];
+    const chunkSize = options.length <= 3 ? 2 : 3;
+    for (let i = 0; i < options.length; i += chunkSize) {
+        chunks.push(options.slice(i, i + chunkSize));
+    }
+    return chunks;
+}
+
 async function handleDialectSelection(bot, message, region) {
     logger.info(`${colors.blue}Dialect selection initiated for region=${region}${colors.reset}`);
     const dialectOptions = dialects[region] || [];
@@ -14,10 +24,12 @@ async function handleDialectSelection(bot, message, region) {
             text: dialect, callback_data: `dialect_${dialect.toLowerCase().replace(/ /g, '_')}`
         }));
 
+        const chunkedOptions = chunkDialectOptions(options);
+
         try {
             await bot.sendMessage(message.chat.id, 'Now select your dialect \[[step 3/3\]]:', {
                 reply_markup: {
-                    inline_keyboard: options.map(option => [option])
+                    inline_keyboard: chunkedOptions
                 }
             });
             logger.info(`${colors.green}Dialect options sent to user${colors.reset}`);

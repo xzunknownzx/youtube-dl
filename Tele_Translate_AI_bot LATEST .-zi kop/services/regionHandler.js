@@ -1,9 +1,35 @@
 const User = require('../models/User');
 const logger = require('../logger');
 const { handleDialectSelection } = require('./dialectHandler');
-const { sendInitialMenu } = require('./menuHandler');  // Add this import
-const { regions, dialects } = require('./languages');  // Add dialects to the import
+const { sendInitialMenu } = require('./menuHandler');
+const { regions, dialects } = require('./languages');
 const colors = require('./colors');
+
+// Helper function to chunk region options
+function chunkRegionOptions(options) {
+    const chunks = [];
+    const totalOptions = options.length;
+    
+    if (totalOptions <= 3) {
+        return [options];
+    } else if (totalOptions <= 6) {
+        return [options.slice(0, 3), options.slice(3)];
+    } else {
+        const chunkSize = 3;
+        for (let i = 0; i < totalOptions; i += chunkSize) {
+            if (totalOptions - i <= 4) {
+                chunks.push(options.slice(i, i + 2));
+                if (i + 2 < totalOptions) {
+                    chunks.push(options.slice(i + 2));
+                }
+                break;
+            } else {
+                chunks.push(options.slice(i, i + chunkSize));
+            }
+        }
+    }
+    return chunks;
+}
 
 async function handleRegionSelection(bot, message, language) {
     logger.info(`${colors.blue}Region selection initiated for chatId=${message.chat.id}, language=${language}${colors.reset}`);
@@ -19,9 +45,11 @@ async function handleRegionSelection(bot, message, language) {
         text: region, callback_data: `region_${region.toLowerCase().replace(/ /g, '_')}`
     }));
 
+    const chunkedOptions = chunkRegionOptions(regionOptions);
+
     const options = {
         reply_markup: JSON.stringify({
-            inline_keyboard: regionOptions.map(option => [option])
+            inline_keyboard: chunkedOptions
         }),
         parse_mode: 'Markdown'
     };
