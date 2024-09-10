@@ -5,20 +5,49 @@ const colors = require('./colors');
 const { translateMessage, analyzeContext, transcribeAudio, constructLanguageIdentifier, cleanAudio } = require('./azureService');
 const { updateConversation } = require('./conversationHandler');
 const { saveMessage } = require('./messageService');
-const { logMessage } = require('../messageUtils'); // Add this line
-const { sendInitialMenu } = require('./menuHandler'); // Add this line
+const { logMessage } = require('../messageUtils');
+const { sendInitialMenu } = require('./menuHandler');
+const { getState, setState } = require('./stateManager');
+const { handleSupportResponse } = require('./supportHandler');
+const { endAIChat } = require('./aiChatHandler'); // Import the endAIChat function
+const { handleAIChatMessage } = require('./aiChatHandler');
 const fs = require('fs');
 const axios = require('axios');
+const dotenv = require('dotenv');
+dotenv.config();
+const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
 
 async function handleMessage(bot, msg) {
   const userId = msg.chat.id;
-  console.log(`Handling message for userId: ${userId}`);
+  const userState = getState(userId);
+
+  if (userState && userState.inOverrideProcess) {
+    // If the user is in the override process, don't handle the message here
+    return;
+  }
+
+  if (userState && userState.inAIChat) {
+    const user = await User.findOne({ userId: userId });
+    if (!user) {
+      console.warn(`User not found for userId: ${userId}`);
+      await bot.sendMessage(userId, 'User not found. Please start the bot again with /start.');
+      return;
+    }
+    await handleAIChatMessage(bot, msg, user);
+    return;
+  }
 
   const user = await User.findOne({ userId: userId });
+
   if (!user) {
-      console.warn(`User not found for userId: ${userId}`);
-      await bot.sendMessage(userId, 'User not found.');
-      return;
+    console.warn(`User not found for userId: ${userId}`);
+    await bot.sendMessage(userId, 'User not found. Please start the bot again with /start.');
+    return;
+  }
+
+  if (userState && userState.awaitingSupportResponse) {
+    await handleSupportResponse(bot, msg, user);
+    return;
   }
 
   let messageContent = '';
@@ -155,11 +184,15 @@ async function handleMessage(bot, msg) {
 
       const messageToTranslate = messageContent || msg.text;
       
-      if (!user.connectedChatId) {
+    if (!user.connectedChatId) {
+      if (msg.text === '/start') {
+        return;
+      } else {
           console.warn(`User ${userId} is not in a chat.`);
           await bot.sendMessage(userId, 'You are not currently in a chat. Please join or create a chat first.');
           return;
       }
+    }
 
       const targetUser = await User.findOne({ userId: user.connectedChatId });
 

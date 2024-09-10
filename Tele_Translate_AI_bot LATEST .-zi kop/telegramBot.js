@@ -20,19 +20,25 @@ const {
   handleKillChat,
   handleMessage,
   handleMessages,
-  handleOverride,
   getOriginalText,
   getEnhancedText,
   updateConversation,
   deleteCurrentMessage,
   getCurrentMessageId,
   handleRedoTranslation,
-  handleExplainThis
+  handleExplainThis,
+  handleSupport,
+  handleCancelCreateChat,
+  handleCancelSupport,
 } = require('./services/chatService');
-const { logMessage } = require('./messageUtils');
+const { logMessage, deleteLoggedMessages, deleteSetupMessages } = require('./messageUtils');
 const { getState, setState } = require('./services/stateManager');
 const { translateMessage, translateVerbatim, analyzeAdvancedContext, translateAdvancedMessage } = require('./services/azureService');
-
+const { handleSupportSend, handleSupportEdit, handleSupportCancel } = require('./services/supportHandler');
+const { handleOverride } = require('./services/overrideHandler');
+const { deleteSettingsMenu } = require('./services/menuHandler');
+const { handleAIChatButton } = require('./services/menuHandler');
+const { endAIChat, startAIChat, handleAuthCode } = require('./services/aiChatHandler');
 const token = process.env.TELEGRAM_BOT_TOKEN;
 const mongoUri = process.env.MONGO_URI;
 
@@ -103,37 +109,14 @@ bot.onText(/\/cldb/, async (msg) => {
   }
 });
 
-async function checkAndShowStartButton(bot, chatId) {
-  try {
-    const hasMessages = await hasChatMessages(bot, chatId);
+// Remove any existing event listeners for '/start'
+bot.removeTextListener(/\/start/);
 
-    if (!hasMessages) {
-      const user = await User.findOne({ userId: chatId });
-
-      if (!user || !user.connectedChatId) {
-        const options = {
-          reply_markup: {
-            keyboard: [
-              [{ text: 'Start' }]
-            ],
-            resize_keyboard: true,
-            one_time_keyboard: true
-          }
-        };
-
-        await bot.sendMessage(chatId, `Welcome to *Tele_Translate_AI_bot*! Click *Start* to choose your language.`, options);
-      }
-    }
-  } catch (error) {
-    logger.error(`Error checking and showing Start button for chatId ${chatId}:`, error.message, error.stack);
-  }
-}
-
+// Add a single event listener for '/start'
 bot.onText(/\/start/, async (msg) => {
   const chatId = msg.chat.id;
-  logger.info(`Received /start command from chatId: ${chatId}`, msg);
-  await checkAndShowStartButton(bot, chatId);
-  handleStart(bot, msg);
+  logger.info(`[telegramBot.js:onText(/\\/start/)] Received /start command from chatId: ${chatId}`, msg);
+  await handleStart(bot, msg);
 });
 
 bot.onText(/\/kill/, (msg) => {
@@ -178,8 +161,35 @@ bot.on('message', async (msg) => {
   const messageId = msg.message_id;
   const content = msg.text || (msg.voice ? 'Voice message received' : '');
 
-  logger.info(`Message received: ${content} from userId: ${userId}`);
+  logger.info(`[telegramBot.js:on('message')] Message received: ${content} from userId: ${userId}`);
   await logMessage(userId, messageId, 'user', content);
+
+  const userState = getState(userId);
+
+  if (userState && userState.awaitingAIAuthCode) {
+    await handleAuthCode(bot, msg);
+    return;
+  }
+
+  // Check if the user is in the process of joining a chat
+  if (userState && userState.joiningChat) {
+    // If the user is joining a chat, don't process this as a regular message
+    return;
+  }
+
+  // Check if the message is a command
+  if (msg.text && msg.text.startsWith('/')) {
+    // Handle commands other than /start
+    if (msg.text === '/kill') {
+      await handleKillChat(bot, msg);
+    } else if (msg.text === '/cancel') {
+      await sendInitialMenu(bot, userId);
+    }
+    // Do not process /start command here
+    return;
+  }
+
+  // Handle non-command messages
   await queueMessage(bot, msg);
 });
 
@@ -189,14 +199,52 @@ function isValidObjectId(id) {
   return mongoose.Types.ObjectId.isValid(id) && new mongoose.Types.ObjectId(id).toString() === id;
 }
 
+async function handleSupportRequest(bot, userId, username, translatedResponse, originalResponse, timestamp) {
+  const adminChatId = process.env.ADMIN_CHAT_ID;
+  if (!adminChatId) {
+    logger.error('Admin chat ID not set in environment variables');
+    return;
+  }
+
+  const date = new Date(timestamp * 1000).toLocaleString();
+  const messageText = `Support request from @${username} (ID: ${userId})\nTime: ${date}\n\nTranslated message:\n${translatedResponse}`;
+
+  try {
+    const sentMessage = await bot.sendMessage(adminChatId, messageText, {
+      reply_markup: {
+        inline_keyboard: [[{ text: 'See Original', callback_data: `support_original_${userId}` }]]
+      },
+      parse_mode: 'Markdown'
+    });
+
+    // Store the original message for later retrieval
+    setState(userId, { originalSupportMessage: originalResponse });
+
+    logger.info(`Support request sent to admin for user ${username} (${userId})`);
+  } catch (error) {
+    logger.error(`Failed to send support request to admin for user ${username} (${userId}): ${error.message}`);
+  }
+}
+
+async function handleSupportOriginal(bot, query) {
+  const userId = query.data.split('_')[2];
+  const userState = getState(userId);
+  if (userState && userState.originalSupportMessage) {
+    await bot.answerCallbackQuery(query.id, { text: userState.originalSupportMessage, show_alert: true });
+  } else {
+    await bot.answerCallbackQuery(query.id, { text: 'Original message not found', show_alert: true });
+  }
+}
+
 bot.on('callback_query', async (callbackQuery) => {
   const msg = callbackQuery.message;
   const data = callbackQuery.data;
   const userId = msg.chat.id;
-  const user = await User.findOne({ userId: userId });
-  logger.info(`Callback query received: ${data} from userId: ${userId}`);
+  logger.info(`[telegramBot.js:on('callback_query')] Callback query received: ${data} from userId: ${userId}`);
 
   try {
+    let user = await User.findOne({ userId: userId });
+    
     switch (data) {
       case 'change_language':
         await handleStart(bot, callbackQuery.message);
@@ -215,6 +263,33 @@ bot.on('callback_query', async (callbackQuery) => {
         break;
       case 'explain_this':
         await handleExplainThis(bot, msg);
+        break;
+      case 'cancel_join_chat':
+        const userState = getState(userId);
+        if (userState.joiningChat) {
+          setState(userId, { joiningChat: false, promptMessageId: null });
+          await bot.deleteMessage(userId, userState.promptMessageId);
+          const cancelMessage = await bot.sendMessage(userId, 'Join Chat - Cancelled ✅');
+          setTimeout(async () => {
+            await bot.deleteMessage(userId, cancelMessage.message_id);
+            await sendInitialMenu(bot, userId);
+          }, 1000);
+        }
+        break;
+      case 'ai_chat':
+        await handleAIChatButton(bot, callbackQuery);
+        break;
+      case 'end_ai_chat':
+        await endAIChat(bot, userId, sendInitialMenu);
+        break;
+      case 'ai_chat_go_back':
+        await endAIChat(bot, userId, sendInitialMenu);
+        break;
+      case 'support':
+        await handleSupport(bot, callbackQuery);
+        break;
+      case 'cancel_support':
+        await handleCancelSupport(bot, callbackQuery);
         break;
       default:
         if (data.startsWith('lang_')) {
@@ -384,29 +459,50 @@ bot.on('callback_query', async (callbackQuery) => {
           await handleEndChat(bot, msg);
         } else if (data === 'clear_history_yes' || data === 'clear_history_no') {
           await handleClearHistoryConfirmation(bot, callbackQuery);
-        } else if (data === 'ai_chat') {
-          const authPrompt = await bot.sendMessage(userId, 'Please enter your authorization code:');
-          await logMessage(userId, authPrompt.message_id, 'bot', 'Please enter your authorization code:');
-          const currentMessageId = await getCurrentMessageId(userId);
-          bot.once('message', async (msg) => {
-            const authCode = msg.text;
-            if (authCode === 'wick21') {
-              const successMessage = await bot.sendMessage(userId, 'Authorization successful. You can now chat with the AI.');
-              await logMessage(userId, successMessage.message_id, 'bot', 'Authorization successful. You can now chat with the AI.');
-              await deleteCurrentMessage(bot, userId, currentMessageId);
-            } else {
-              const failMessage = await bot.sendMessage(userId, 'Invalid authorization code.');
-              await logMessage(userId, failMessage.message_id, 'bot', 'Invalid authorization code.');
-              await deleteCurrentMessage(bot, userId, currentMessageId);
-            }
-          });
+        } else if (data === 'cancel_create_chat') {
+          logger.info(`Cancel create chat initiated by userId: ${userId}`);
+          await handleCancelCreateChat(bot, callbackQuery);
+        } else if (data.startsWith('support_original_')) {
+          await handleSupportOriginal(bot, callbackQuery);
+        } else if (data === 'support_send') {
+          await handleSupportSend(bot, callbackQuery);
+        } else if (data === 'support_edit') {
+          await handleSupportEdit(bot, callbackQuery);
+        } else if (data === 'settings') {
+          await handleSettings(bot, userId);
+          break;
+        } else if (data === 'settings_change_language') {
+          await deleteSettingsMenu(bot, userId);
+          await handleStart(bot, callbackQuery.message);
+          break;
+        } else if (data === 'settings_override') {
+          await handleOverride(bot, userId);
+          break;
+        } else if (data === 'settings_go_back') {
+          await deleteSettingsMenu(bot, userId);
+          await sendInitialMenu(bot, userId);
+          break;
+        } else if (data.startsWith('settings_go_back')) {
+          const userState = getState(userId);
+          if (userState && userState.overridePromptMessageId) {
+            await bot.deleteMessage(userId, userState.overridePromptMessageId);
+            setState(userId, { overridePromptMessageId: null, inOverrideProcess: false });
+          }
+          await handleSettings(bot, userId);
+          break;
         } else {
-          logger.warn('Unknown callback query data:', data);
+          logger.warn(`Unknown callback query data: ${data}`);
+          await bot.answerCallbackQuery(callbackQuery.id, { text: 'Unknown command' });
         }
     }
   } catch (error) {
     logger.error(`Error handling callback query data: ${data} for userId ${userId}: ${error.message}`);
-    await bot.sendMessage(userId, 'An error occurred while processing your request. Please try again later.');
+    try {
+      await bot.answerCallbackQuery(callbackQuery.id, { text: 'An error occurred. Please try again.' });
+      await bot.sendMessage(userId, 'An error occurred while processing your request. Please try again later.');
+    } catch (sendError) {
+      logger.error(`Failed to send error message to user ${userId}: ${sendError.message}`);
+    }
   }
 });
 
@@ -441,5 +537,6 @@ async function sendMessageWithButtons(bot, chatId, text) {
 
 module.exports = {
   bot,
-  sendMessageWithButtons
+  sendMessageWithButtons,
+  handleSupportRequest
 };

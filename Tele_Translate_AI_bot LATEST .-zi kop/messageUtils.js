@@ -50,7 +50,64 @@ async function deleteAllMessagesInChat(bot, chatId) {
   logger.info(`Finished deletion of messages in chatId: ${chatId}`);
 }
 
+async function deleteLoggedMessages(bot, chatId) {
+  try {
+    const messages = await MessageLog.find({ chatId }).select('messageId -_id');
+    const deletionPromises = messages.map(async (message) => {
+      try {
+        await bot.deleteMessage(chatId, message.messageId);
+        logger.info(`Deleted message with id: ${message.messageId}`);
+      } catch (error) {
+        logger.warn(`Message with id ${message.messageId} not found for chatId ${chatId}. It might have already been deleted.`);
+      }
+    });
+    await Promise.all(deletionPromises);
+    await MessageLog.deleteMany({ chatId });
+    logger.info(`Finished deletion of logged messages in chatId: ${chatId}`);
+  } catch (error) {
+    logger.error(`Error deleting logged messages for chatId ${chatId}:`, error.message);
+  }
+}
+
+async function deleteSetupMessages(bot, chatId) {
+  try {
+    const setupMessages = await MessageLog.find({
+      chatId,
+      content: { $in: [
+        'Please wait...',
+        'Welcome! Please select your language. [[step 1/3]]:',
+        'Now, select your region [[step 2/3]]:',
+        'Now select your dialect [[step 3/3]]:'
+      ]}
+    }).select('messageId -_id');
+
+    const deletionPromises = setupMessages.map(async (message) => {
+      try {
+        await bot.deleteMessage(chatId, message.messageId);
+        logger.info(`Deleted setup message with id: ${message.messageId}`);
+      } catch (error) {
+        logger.warn(`Setup message with id ${message.messageId} not found for chatId ${chatId}. It might have already been deleted.`);
+      }
+    });
+    await Promise.all(deletionPromises);
+    await MessageLog.deleteMany({
+      chatId,
+      content: { $in: [
+        'Please wait...',
+        'Welcome! Please select your language. [[step 1/3]]:',
+        'Now, select your region [[step 2/3]]:',
+        'Now select your dialect [[step 3/3]]:'
+      ]}
+    });
+    logger.info(`Finished deletion of setup messages in chatId: ${chatId}`);
+  } catch (error) {
+    logger.error(`Error deleting setup messages for chatId ${chatId}:`, error.message);
+  }
+}
+
 module.exports = {
   logMessage,
+  deleteLoggedMessages,
   deleteAllMessagesInChat,
+  deleteSetupMessages,  // Add this line
 };

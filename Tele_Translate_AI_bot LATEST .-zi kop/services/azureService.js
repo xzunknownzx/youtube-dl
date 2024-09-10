@@ -96,7 +96,7 @@ async function transcribeAudio(filePath, languageIdentifier) {
     
     if (response.status === 200 && response.data) {
       console.log(`Step: Audio Transcription Completed Successfully`);
-      return response.data; 
+      return response.data;
     } else {
       console.error(`Error: Transcription Failed - Status: ${response.status}, Data: ${JSON.stringify(response.data)}`);
       throw new Error('Failed to transcribe audio');
@@ -147,28 +147,28 @@ const translateVerbatim = async (message, userLanguage, region, dialect) => {
 };  
 
 const translateMessage = async (message, context, sourceUser, targetUser, conversationHistory) => {
-  const sourceLanguageIdentifier = constructLanguageIdentifier(sourceUser.language, sourceUser.location);
-  const targetLanguageIdentifier = constructLanguageIdentifier(targetUser.language, targetUser.location);
+    const sourceLanguageIdentifier = constructLanguageIdentifier(sourceUser.language, sourceUser.location);
+    const targetLanguageIdentifier = constructLanguageIdentifier(targetUser.language, targetUser.location);
 
-  const enhancedPrompt = generateEnhancedPrompt(message, context, sourceUser, targetUser, conversationHistory, sourceLanguageIdentifier, targetLanguageIdentifier);
+    const enhancedPrompt = generateEnhancedPrompt(message, context, sourceUser, targetUser, conversationHistory, sourceLanguageIdentifier, targetLanguageIdentifier);
 
-  console.log(`Step: Message Translation Started with Source Language: ${sourceLanguageIdentifier} and Target Language: ${targetLanguageIdentifier}`);
+    console.log(`Step: Message Translation Started with Source Language: ${sourceLanguageIdentifier} and Target Language: ${targetLanguageIdentifier}`);
 
-  try {
-    const result = await client.chat.completions.create({
-      messages: [{ role: "user", content: enhancedPrompt }],
-      model: process.env.AZURE_OPENAI_DEPLOYMENT,
-      max_tokens: 150,
-      temperature: 0.7
-    });
+    try {
+        const result = await client.chat.completions.create({
+            messages: [{ role: "user", content: enhancedPrompt }],
+            model: process.env.AZURE_OPENAI_DEPLOYMENT,
+            max_tokens: 150,
+            temperature: 0.7
+        });
 
-    const translatedText = result.choices[0].message.content.trim();
-    console.log(`Step: Message Translation Completed. Translated Text: ${translatedText}`);
-    return translatedText;
-  } catch (error) {
-    console.error(`Error: Message Translation Failed - ${error.message}`);
-    throw new Error('Failed to enhance translation');
-  }
+        const translatedText = result.choices[0].message.content.trim();
+        console.log(`Step: Message Translation Completed. Translated Text: ${translatedText}`);
+        return translatedText;
+    } catch (error) {
+        console.error(`Error: Message Translation Failed - ${error.message}`);
+        throw new Error('Failed to enhance translation');
+    }
 };
 
 const generateEnhancedPrompt = (message, context, sourceUser, targetUser, conversationHistory, sourceLanguageIdentifier, targetLanguageIdentifier) => {
@@ -319,6 +319,29 @@ async function cleanAudio(fileName) {
     });
 }
 
+async function handleAIConversation(messages, userLanguage) {
+    const MAX_CONTEXT_MESSAGES = 10;
+    const conversationHistory = messages.slice(-MAX_CONTEXT_MESSAGES);
+
+    const systemMessage = {
+        role: "system",
+        content: `You are a helpful assistant. Communicate in ${userLanguage}. Be concise and friendly in your responses. Use markdown formatting: **bold** for emphasis, *italic* for slight emphasis, and \`code\` for code or technical terms.`
+    };
+
+    try {
+        const completion = await client.chat.completions.create({
+            model: process.env.AZURE_OPENAI_DEPLOYMENT,
+            messages: [systemMessage, ...conversationHistory],
+            max_tokens: 150,
+            temperature: 0.7,
+        });
+
+        return completion.choices[0].message.content;
+    } catch (error) {
+        console.error("Error in AI conversation:", error);
+        throw new Error("Failed to generate AI response");
+    }
+}
 
 module.exports = {   
   translateVerbatim,   
@@ -328,7 +351,8 @@ module.exports = {
   analyzeAdvancedContext,
   transcribeAudio,
   constructLanguageIdentifier,
-  cleanAudio
+  cleanAudio,
+  handleAIConversation
 };  
 
 

@@ -14,16 +14,19 @@ async function handleDialectSelection(bot, message, region) {
             text: dialect, callback_data: `dialect_${dialect.toLowerCase().replace(/ /g, '_')}`
         }));
 
-        await new Promise(resolve => setTimeout(resolve, 200));
-        await bot.deleteMessage(message.chat.id, message.message_id);
-        await bot.sendMessage(message.chat.id, 'Now select your dialect \[[step 3/3\]]:', {
-            reply_markup: {
-                inline_keyboard: options.map(option => [option])
-            }
-        });
-        logger.info(`${colors.green}Dialect options sent to user${colors.reset}`);
+        try {
+            await bot.sendMessage(message.chat.id, 'Now select your dialect \[[step 3/3\]]:', {
+                reply_markup: {
+                    inline_keyboard: options.map(option => [option])
+                }
+            });
+            logger.info(`${colors.green}Dialect options sent to user${colors.reset}`);
+        } catch (error) {
+            logger.error(`${colors.red}Error sending dialect options: ${error.message}${colors.reset}`);
+            await sendInitialMenu(bot, message.chat.id);
+        }
     } else {
-        logger.info(`${colors.red}No dialects found, moving to main menu${colors.reset}`);
+        logger.info(`${colors.yellow}No specific dialects found for region=${region}. Using general language settings.${colors.reset}`);
         await sendInitialMenu(bot, message.chat.id);
     }
 }
@@ -42,13 +45,14 @@ async function handleDialectChange(bot, message, dialect) {
 
             await new Promise(resolve => setTimeout(resolve, 200));
             await bot.deleteMessage(userId, message.message_id);
-            await sendInitialMenu(bot, message.chat.id);
+            await sendInitialMenu(bot, userId);  // Add this line to show the main menu
         } else {
             await bot.sendMessage(userId, 'User not found.');
         }
     } catch (error) {
         logger.error(`${colors.red}Error setting dialect for userId=${userId}${colors.reset}:`, error.message);
         await bot.sendMessage(userId, 'Failed to set dialect.');
+        await sendInitialMenu(bot, userId);  // Add this line to show the main menu in case of error
     }
 }
 

@@ -1,7 +1,8 @@
 const User = require('../models/User');
 const logger = require('../logger');
 const { handleDialectSelection } = require('./dialectHandler');
-const { regions } = require('./languages');
+const { sendInitialMenu } = require('./menuHandler');  // Add this import
+const { regions, dialects } = require('./languages');  // Add dialects to the import
 const colors = require('./colors');
 
 async function handleRegionSelection(bot, message, language) {
@@ -43,21 +44,34 @@ async function handleRegionChange(bot, message, region) {
         if (user) {
             user.region = region;
             const languageCode = user.language.replace('lang_', '');
-            user.dialect = `${languageCode}-${region.toLowerCase().replace(/ /g, '_')}`;
+            user.dialect = `${languageCode}-${region.toUpperCase()}`;
 
             logger.info(`${colors.blue}Setting region=${user.region}, dialect=${user.dialect} for userId=${userId}${colors.reset}`);
 
             await user.save();
             logger.info(`${colors.green}Region set to ${region} for userId=${userId}${colors.reset}`);
 
-            await new Promise(resolve => setTimeout(resolve, 200));
-            await handleDialectSelection(bot, message, user.dialect);
+            // Wrap message deletion in try-catch
+            try {
+                await bot.deleteMessage(userId, message.message_id);
+            } catch (deleteError) {
+                logger.warn(`${colors.yellow}Failed to delete message for userId=${userId}. Error: ${deleteError.message}${colors.reset}`);
+                // Continue with the process even if deletion fails
+            }
+
+            const dialectOptions = dialects[user.dialect] || [];
+            if (dialectOptions.length > 0) {
+                await handleDialectSelection(bot, message, user.dialect);
+            } else {
+                logger.info(`${colors.yellow}No specific dialects found for region=${region}. Showing main menu.${colors.reset}`);
+                await sendInitialMenu(bot, userId);
+            }
         } else {
             throw new Error('User not found');
         }
     } catch (error) {
         logger.error(`${colors.red}Error setting region for userId=${userId}${colors.reset}:`, error.message, error.stack);
-        await bot.sendMessage(userId, `Failed to set region. Please try again or contact support.`);
+        await bot.sendMessage(userId, `An error occurred while setting the region. Please try again or contact support.`);
         
         // Return to the main menu or previous step
         await sendInitialMenu(bot, userId);

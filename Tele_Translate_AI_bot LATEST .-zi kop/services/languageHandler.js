@@ -17,23 +17,27 @@ async function handleLanguageSelection(bot, message, language) {
             user.telegramName = telegramName;
         }
 
-        await bot.editMessageText('Language selected. Please wait...', {
-            chat_id: message.chat.id,
-            message_id: message.message_id
-        });
+        // Delete the language selection menu
+        await bot.deleteMessage(userId, message.message_id);
+
+        // Send "Please wait..." message
+        const waitMessage = await bot.sendMessage(userId, 'Language selected. Please wait...');
 
         await user.save();
         logger.info(`${colors.green}Language set to ${language} for userId=${userId}${colors.reset}`);
 
-        await new Promise(resolve => setTimeout(resolve, 250));
-        await bot.deleteMessage(userId, message.message_id);
+        // Wait for a short time to show the "Please wait..." message
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
+        // Delete the "Please wait..." message
+        await bot.deleteMessage(userId, waitMessage.message_id);
 
         logger.info(`${colors.blue}Calling handleRegionSelection for chatId=${userId}${colors.reset}`);
         await handleRegionSelection(bot, message, language);
 
     } catch (error) {
         logger.error(`${colors.red}Error setting language for userId=${userId}${colors.reset}:`, error.message);
-        await bot.sendMessage(message.chat.id, 'Failed to set language.');
+        await bot.sendMessage(userId, 'Failed to set language.');
     }
 }
 
