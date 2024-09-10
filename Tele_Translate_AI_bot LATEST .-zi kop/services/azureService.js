@@ -1,8 +1,3 @@
-const mongoose = require('mongoose');
-const logger = require('../logger');
-const Message = require('../models/Message');
-const User = require('../models/User');
-const Conversation = require('../models/Conversation');
 const FormData = require('form-data');
 const fs = require('fs');
 process.stdout.setEncoding('utf8');  
@@ -12,8 +7,7 @@ const axios = require('axios');
 const path = require('path'); // Import the path module
 const dotenv = require('dotenv');
 dotenv.config({ path: path.resolve(__dirname, '../.env') }); // Load environment variables from .env in the parent directory
-const { regions, dialectMapping } = require('./languages.js'); // Import necessary mappings
-const os = require('os');
+const { dialectMapping } = require('./languages.js'); // Import necessary mappings
 
 // ANSI color codes for logging (Optional)
 const colors = {  
@@ -307,7 +301,7 @@ async function cleanAudio(fileName) {
     return new Promise((resolve, reject) => {
         const command = `ffmpeg -i "${fileName}" -af "arnndn=m=${shModelPath}" "${cleanedFileName}"`;
         
-        exec(command, (error, stdout, stderr) => {
+        exec(command, (error) => {
             if (error) {
                 console.error(`Error cleaning audio: ${error.message}`);
                 reject(error);

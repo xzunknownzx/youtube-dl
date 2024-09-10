@@ -35,58 +35,58 @@ async function handleOverride(bot, chatId) {
 		}
 
 		if (authCode === process.env.OVERRIDE_AUTH_CODE) {
-			try {
-				await bot.deleteMessage(chatId, getState(chatId).overridePromptMessageId);
-			} catch (error) {
-				colorLog('ERROR', `User${chatId}`, `Failed to delete override prompt: ${error.message}`);
-			}
-			const successMessage = await bot.sendMessage(chatId, 'Authorization successful ✅');
-			setTimeout(async () => {
-				try {
-					await bot.deleteMessage(chatId, successMessage.message_id);
-				} catch (error) {
-					colorLog('ERROR', `User${chatId}`, `Failed to delete success message: ${error.message}`);
-				}
-				setState(chatId, { inOverrideProcess: false });
-				await handleCustomLanguageInput(bot, chatId);
-			}, 1200);
-		} else {
-			if (attempts < maxAttempts) {
-				try {
-					await bot.editMessageText(`Invalid code. Please try again. (Attempt ${attempts + 1}/${maxAttempts})`, {
-						chat_id: chatId,
-						message_id: getState(chatId).overridePromptMessageId,
-						reply_markup: {
-							inline_keyboard: [
-								[{ text: 'Go Back', callback_data: 'settings_go_back' }]
-							]
-						}
-					});
-					bot.once('message', handleAttempt);
-				} catch (error) {
-					colorLog('ERROR', `User${chatId}`, `Failed to edit override prompt: ${error.message}`);
-					// If editing fails, send a new message
-					await promptForCode();
-				}
-			} else {
-				try {
-					await bot.deleteMessage(chatId, getState(chatId).overridePromptMessageId);
-				} catch (error) {
-					colorLog('ERROR', `User${chatId}`, `Failed to delete override prompt: ${error.message}`);
-				}
-				const maxAttemptsMessage = await bot.sendMessage(chatId, 'Maximum attempts reached ❌');
-				setTimeout(async () => {
-					try {
-						await bot.deleteMessage(chatId, maxAttemptsMessage.message_id);
-					} catch (error) {
-						colorLog('ERROR', `User${chatId}`, `Failed to delete max attempts message: ${error.message}`);
-					}
-					setState(chatId, { inOverrideProcess: false });
-					await handleSettings(bot, chatId);
-				}, 1200);
-				bot.removeListener('message', handleAttempt);
-			}
-		}
+  			try {
+  				await bot.deleteMessage(chatId, getState(chatId).overridePromptMessageId);
+  			} catch (error) {
+  				colorLog('ERROR', `User${chatId}`, `Failed to delete override prompt: ${error.message}`);
+  			}
+  			const successMessage = await bot.sendMessage(chatId, 'Authorization successful ✅');
+  			setTimeout(async () => {
+  				try {
+  					await bot.deleteMessage(chatId, successMessage.message_id);
+  				} catch (error) {
+  					colorLog('ERROR', `User${chatId}`, `Failed to delete success message: ${error.message}`);
+  				}
+  				setState(chatId, { inOverrideProcess: false });
+  				await handleCustomLanguageInput(bot, chatId);
+  			}, 1200);
+  		}
+  else if (attempts < maxAttempts) {
+  				try {
+  					await bot.editMessageText(`Invalid code. Please try again. (Attempt ${attempts + 1}/${maxAttempts})`, {
+  						chat_id: chatId,
+  						message_id: getState(chatId).overridePromptMessageId,
+  						reply_markup: {
+  							inline_keyboard: [
+  								[{ text: 'Go Back', callback_data: 'settings_go_back' }]
+  							]
+  						}
+  					});
+  					bot.once('message', handleAttempt);
+  				} catch (error) {
+  					colorLog('ERROR', `User${chatId}`, `Failed to edit override prompt: ${error.message}`);
+  					// If editing fails, send a new message
+  					await promptForCode();
+  				}
+  			}
+  else {
+  				try {
+  					await bot.deleteMessage(chatId, getState(chatId).overridePromptMessageId);
+  				} catch (error) {
+  					colorLog('ERROR', `User${chatId}`, `Failed to delete override prompt: ${error.message}`);
+  				}
+  				const maxAttemptsMessage = await bot.sendMessage(chatId, 'Maximum attempts reached ❌');
+  				setTimeout(async () => {
+  					try {
+  						await bot.deleteMessage(chatId, maxAttemptsMessage.message_id);
+  					} catch (error) {
+  						colorLog('ERROR', `User${chatId}`, `Failed to delete max attempts message: ${error.message}`);
+  					}
+  					setState(chatId, { inOverrideProcess: false });
+  					await handleSettings(bot, chatId);
+  				}, 1200);
+  				bot.removeListener('message', handleAttempt);
+  			}
 	};
 
 	bot.once('message', handleAttempt);

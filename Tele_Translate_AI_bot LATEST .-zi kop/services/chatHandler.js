@@ -1,12 +1,10 @@
 const User = require('../models/User');
-const Conversation = require('../models/Conversation');
 const logger = require('../logger');
-const colors = require('./colors');
 const { sendInitialMenu } = require('./menuHandler');
 const { escapeMarkdown } = require('./utils');
 const { setState, getState } = require('./stateManager');
 const { logMessage, deleteLoggedMessages, deleteSetupMessages } = require('../messageUtils');
-const { Worker, isMainThread, parentPort, workerData } = require('worker_threads');
+const { Worker } = require('worker_threads');
 
 async function handleCreateChat(bot, message) {
   const userId = message.chat.id;

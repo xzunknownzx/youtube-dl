@@ -1,6 +1,6 @@
 const User = require('../models/User');
 const logger = require('../logger');
-const { logMessage, deleteLoggedMessages } = require('./messageUtils');  // Update this line
+const { logMessage } = require('./messageUtils');  // Update this line
 const { languageOptions } = require('./languages');
 const colors = require('./colors');
 

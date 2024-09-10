@@ -9,9 +9,7 @@ const {
   handleStart,
   handleLanguageSelection,
   handleRegionChange,
-  handleRegionSelection,
   handleDialectChange,
-  handleDialectSelection,
   sendInitialMenu,
   handleSettings,
   handleCreateChat,
@@ -19,26 +17,21 @@ const {
   handleEndChat,
   handleKillChat,
   handleMessage,
-  handleMessages,
   getOriginalText,
   getEnhancedText,
-  updateConversation,
-  deleteCurrentMessage,
-  getCurrentMessageId,
   handleRedoTranslation,
   handleExplainThis,
   handleSupport,
   handleCancelCreateChat,
   handleCancelSupport,
 } = require('./services/chatService');
-const { logMessage, deleteLoggedMessages, deleteSetupMessages } = require('./messageUtils');
+const { logMessage } = require('./messageUtils');
 const { getState, setState } = require('./services/stateManager');
-const { translateMessage, translateVerbatim, analyzeAdvancedContext, translateAdvancedMessage } = require('./services/azureService');
-const { handleSupportSend, handleSupportEdit, handleSupportCancel } = require('./services/supportHandler');
+const { translateVerbatim, analyzeAdvancedContext, translateAdvancedMessage } = require('./services/azureService');
+const { handleSupportSend, handleSupportEdit } = require('./services/supportHandler');
 const { handleOverride } = require('./services/overrideHandler');
-const { deleteSettingsMenu } = require('./services/menuHandler');
-const { handleAIChatButton } = require('./services/menuHandler');
-const { endAIChat, startAIChat, handleAuthCode } = require('./services/aiChatHandler');
+const {deleteSettingsMenu, handleAIChatButton} = require('./services/menuHandler');
+const { endAIChat, handleAuthCode } = require('./services/aiChatHandler');
 const token = process.env.TELEGRAM_BOT_TOKEN;
 const mongoUri = process.env.MONGO_URI;
 
@@ -62,7 +55,7 @@ bot.on('polling_error', (error) => {
   logger.error(`Polling error: ${error.message}`, error);
 });
 
-bot.onText(/\/clusers/, async (msg) => {
+bot.onText(/\/clusers/, async () => {
   try {
     await User.deleteMany({});
     logger.info('Users collection cleared');
@@ -71,7 +64,7 @@ bot.onText(/\/clusers/, async (msg) => {
   }
 });
 
-bot.onText(/\/clchats/, async (msg) => {
+bot.onText(/\/clchats/, async () => {
   try {
     await Conversation.deleteMany({});
     logger.info('Conversations collection cleared');
@@ -80,7 +73,7 @@ bot.onText(/\/clchats/, async (msg) => {
   }
 });
 
-bot.onText(/\/clmessages/, async (msg) => {
+bot.onText(/\/clmessages/, async () => {
   try {
     await Message.deleteMany({});
     logger.info('Messages collection cleared');
@@ -210,12 +203,6 @@ async function handleSupportRequest(bot, userId, username, translatedResponse, o
   const messageText = `Support request from @${username} (ID: ${userId})\nTime: ${date}\n\nTranslated message:\n${translatedResponse}`;
 
   try {
-    const sentMessage = await bot.sendMessage(adminChatId, messageText, {
-      reply_markup: {
-        inline_keyboard: [[{ text: 'See Original', callback_data: `support_original_${userId}` }]]
-      },
-      parse_mode: 'Markdown'
-    });
 
     // Store the original message for later retrieval
     setState(userId, { originalSupportMessage: originalResponse });

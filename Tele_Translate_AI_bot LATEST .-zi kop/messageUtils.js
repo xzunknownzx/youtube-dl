@@ -1,4 +1,3 @@
-const axios = require('axios');
 const logger = require('./logger');
 const MessageLog = require('./models/MessageLog');
 

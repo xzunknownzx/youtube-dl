@@ -1,5 +1,3 @@
-const { colorLog } = require('./colorLogger');
-
 const state = {};
 
 function getState(chatId) {
