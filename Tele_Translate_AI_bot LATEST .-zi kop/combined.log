@@ -8332,3 +8332,43 @@
 02:27:50 [32minfo[39m=Logged message 27078 from user in chat 5573813015
 02:27:56 [32minfo[39m=[telegramBot.js:on('message')] Message received: What from userId: 5573813015
 02:27:56 [32minfo[39m=Logged message 27080 from user in chat 5573813015
+02:30:20 [32minfo[39m=[32mChatService initialized[0m
+02:30:20 [32minfo[39m=MongoDB connected
+02:30:23 [32minfo[39m=[telegramBot.js:on('message')] Message received: /start from userId: 7294983292
+02:30:23 [32minfo[39m=[telegramBot.js:onText(/\/start/)] Received /start command from chatId: 7294983292 {"message_id":27082,"from":{"id":7294983292,"is_bot":false,"first_name":"Anna","last_name":"May","username":"annamayye","language_code":"en"},"chat":{"id":7294983292,"first_name":"Anna","last_name":"May","username":"annamayye","type":"private"},"date":1725949821,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}
+02:30:23 [32minfo[39m=[startHandler.js:handleStart] [34mReceived /start command from chatId=7294983292[0m
+02:30:23 [32minfo[39m=Logged message 27082 from user in chat 7294983292
+02:30:23 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27083 from bot in chat 7294983292
+02:30:24 [32minfo[39m=[startHandler.js:handleStart] [34mStarting language selection for chatId=7294983292[0m
+02:30:25 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27084 from bot in chat 7294983292
+02:30:26 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: lang_en from userId: 7294983292
+02:30:26 [32minfo[39m=[34mLanguage selection initiated for chatId=7294983292, language=en[0m
+02:30:27 [32minfo[39m=[32mLanguage set to en for userId=7294983292[0m
+02:30:28 [32minfo[39m=[34mCalling handleRegionSelection for chatId=7294983292[0m
+02:30:28 [32minfo[39m=[34mRegion selection initiated for chatId=7294983292, language=en[0m
+02:30:29 [32minfo[39m=[34mRegion selection options sent for chatId=7294983292[0m
+02:30:29 [32minfo[39m=Language selected: en for userId: 7294983292
+02:30:32 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: region_us from userId: 7294983292
+02:30:32 [32minfo[39m=[34mRegion change initiated for chatId=7294983292, region=us[0m
+02:30:32 [32minfo[39m=[34mSetting region=us, dialect=en-US for userId=7294983292[0m
+02:30:32 [32minfo[39m=[32mRegion set to us for userId=7294983292[0m
+02:30:32 [32minfo[39m=[34mDialect selection initiated for region=en-US[0m
+02:30:32 [32minfo[39m=[33mDialects found: 10 for region=en-US[0m
+02:30:32 [32minfo[39m=[32mDialect options sent to user[0m
+02:30:32 [32minfo[39m=Region selected: us for userId: 7294983292
+02:30:37 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: dialect_new_york_city from userId: 7294983292
+02:30:37 [32minfo[39m=[34mDialect change initiated for chatId=7294983292, dialect=new[0m
+02:30:37 [32minfo[39m=[32mDialect set to new for userId=7294983292[0m
+02:30:37 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+02:30:37 [32minfo[39m=Dialect selected: new for userId: 7294983292
+02:30:44 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: dialect_chicago from userId: 7294983292
+02:30:44 [32minfo[39m=[34mDialect change initiated for chatId=7294983292, dialect=chicago[0m
+02:30:44 [32minfo[39m=[32mDialect set to chicago for userId=7294983292[0m
+02:30:44 [32minfo[39m=[34mDisplaying initial menu for chatId=7294983292[0m
+02:30:45 [32minfo[39m=Dialect selected: chicago for userId: 7294983292
+02:30:46 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: settings from userId: 7294983292
+02:30:48 [32minfo[39m=[telegramBot.js:on('callback_query')] Callback query received: settings_change_language from userId: 7294983292
+02:30:48 [32minfo[39m=[startHandler.js:handleStart] [34mReceived /start command from chatId=7294983292[0m
+02:30:49 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27091 from bot in chat 7294983292
+02:30:50 [32minfo[39m=[startHandler.js:handleStart] [34mStarting language selection for chatId=7294983292[0m
+02:30:50 [32minfo[39m=[messageUtils.js:logMessage] Logged message 27092 from bot in chat 7294983292
