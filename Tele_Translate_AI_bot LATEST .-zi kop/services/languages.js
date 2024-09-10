@@ -1,5 +1,7 @@
 const languageOptions = [
+    { text: 'Thai', callback_data: 'lang_th' },
     { text: 'English', callback_data: 'lang_en' },
+    { text: 'Slovak', callback_data: 'lang_sk' },  // Add Slovak here
     { text: 'Ukrainian', callback_data: 'lang_uk' },
     { text: 'Dutch', callback_data: 'lang_nl' },
     { text: 'French', callback_data: 'lang_fr' },
@@ -47,7 +49,9 @@ const regions = {
     'lang_amz': ['Morocco', 'Algeria', 'Libya', 'Tunisia', 'Mauritania', 'Mali', 'Niger', 'Burkina Faso'],
     'lang_ro': ['Romania', 'Moldova', 'Ukraine', 'Serbia', 'Hungary', 'Bulgaria'],
     'lang_bam': ['Cameroon', 'Nigeria'],
-    'lang_hr': ['Croatia', 'Bosnia and Herzegovina', 'Serbia', 'Montenegro', 'Austria', 'Hungary', 'Italy']
+    'lang_hr': ['Croatia', 'Bosnia and Herzegovina', 'Serbia', 'Montenegro', 'Austria', 'Hungary', 'Italy'],
+    'lang_sk': ['Bratislava', 'Košice', 'Prešov', 'Žilina', 'Banská Bystrica', 'Nitra', 'Trnava', 'Trenčín', 'Martin', 'Poprad'],
+    'lang_th': ['Bangkok', 'Chiang Mai', 'Phuket', 'Pattaya', 'Chiang Rai', 'Khon Kaen', 'Udon Thani', 'Nakhon Ratchasima', 'Surat Thani', 'Ayutthaya']  // Add Thai regions
 };
 
 const dialectMapping = {
@@ -159,7 +163,27 @@ const dialectMapping = {
     'Croatia': 'hr-HR',
     'Bosnia and Herzegovina': 'hr-BA',
     'Serbia': 'hr-RS',
-    'Montenegro': 'hr-ME'
+    'Montenegro': 'hr-ME',
+    'Bratislava': 'sk-SK',
+    'Košice': 'sk-SK',
+    'Prešov': 'sk-SK',
+    'Žilina': 'sk-SK',
+    'Banská Bystrica': 'sk-SK',
+    'Nitra': 'sk-SK',
+    'Trnava': 'sk-SK',
+    'Trenčín': 'sk-SK',
+    'Martin': 'sk-SK',
+    'Poprad': 'sk-SK',
+    'Bangkok': 'th-TH',
+    'Chiang Mai': 'th-TH',
+    'Phuket': 'th-TH',
+    'Pattaya': 'th-TH',
+    'Chiang Rai': 'th-TH',
+    'Khon Kaen': 'th-TH',
+    'Udon Thani': 'th-TH',
+    'Nakhon Ratchasima': 'th-TH',
+    'Surat Thani': 'th-TH',
+    'Ayutthaya': 'th-TH'
 };
 
 const dialects = {
@@ -200,7 +224,9 @@ const dialects = {
     'amz-MA': ['Tarifit', 'Tashelhit', 'Tachelhit', 'Central Atlas Tamazight'],
     'ro-RO': ['Istro-Romanian', 'Aromanian', 'Moldavian', 'Daco-Romanian', 'Megleno-Romanian'],
     'bam-CM': ['Yemba', 'Medumba', 'Fe\'fe\'', 'Ghomala\'', 'Ngiemboon'],
-    'hr-HR': ['Kajkavian', 'Dalmatian', 'Chakavian', 'Shtokavian', 'Istrian']
+    'hr-HR': ['Kajkavian', 'Dalmatian', 'Chakavian', 'Shtokavian', 'Istrian'],
+    'sk-SK': ['Western Slovak', 'Central Slovak', 'Eastern Slovak', 'Standard Slovak'],
+    'th-TH': ['Central Thai', 'Northern Thai', 'Northeastern Thai (Isan)', 'Southern Thai', 'Standard Thai']  // Add Thai dialects
 };
 
 
